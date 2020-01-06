@@ -42,7 +42,7 @@ class CustomersController < ApplicationController
     @call = Call.new
     @q = Customer.ransack(params[:q]).result
     @prev_customer = @q.where("id < ?", @customer.id).last
-    @next_customer = Customer.where("id > ?", @customer.id).first
+    @next_customer = @q.where("id > ?", @customer.id).first
 
 #    @customer_ids = params[:customer_ids]
     #current_index = @customer_ids.index(params[:id].to_s)
