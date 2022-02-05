@@ -1,5 +1,5 @@
 import re
-from tkinter.messagebox import NO
+# from tkinter.messagebox import NO
 from bs4.element import ResultSet
 from flask import json
 from selenium.webdriver.remote.webelement import WebElement
