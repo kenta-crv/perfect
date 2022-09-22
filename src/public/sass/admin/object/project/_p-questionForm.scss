@@ -1,0 +1,63 @@
+.p-questionForm {
+	>li{
+		list-style-type: none;
+		+li{
+			margin: 50px 0 0;
+		}
+	}
+	&__head{
+		&__title{
+			padding: 0 10px;
+			border-bottom: 1px solid #000;
+			background: color("thin--blue");
+			@extend %c-text__lv5;
+			@extend %c-text__weight--500;
+			span{
+				@extend %c-text__lv3;
+				@extend %c-text__weight--700;
+				color: color("blue");
+			}
+			strong{
+				margin: 0 5px 0 0;
+				@extend %c-text__lv3;			
+				color: color("deep--blue");
+				@extend %c-text__weight--700;
+			}
+		}
+	}
+	.js-button-toggle{
+		cursor: pointer;
+		position: relative;
+		&:after{
+			content: "";
+	    display: block;
+	    width: 24px;
+	    height: 24px;
+	    background: url(../../image/icon/blue_select.svg);
+	    background-size: contain !important;
+	    position: absolute;
+	    top: 5px;
+	    right: 10px;
+		}
+	}
+	&__body{
+		margin: 25px 0 0;
+	}
+	.js-target-toggle {
+		display: none;
+	}
+}
+.js-show{
+	.js-button-toggle{
+		&:after{
+			transform: translate(0%,0%) rotate(180deg);
+		}
+	}
+	.js-target-toggle {
+		display: block;
+	}
+
+}
+
+
+

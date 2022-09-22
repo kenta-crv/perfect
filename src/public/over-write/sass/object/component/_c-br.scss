@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.l-body{
+  .on_sp{
+    display:none;
+    @include mq(sp){display:block;}
+  }
+  .on_spSecond{
+    display:none;
+    @include mq(spSecond){display:block;}
+  }
+  .on_spNarrow{
+    display:none;
+    @include mq(spNarrow){display:block;}
+  }
+  .off_sp{
+    display:block;
+    @include mq(sp){display:none;}
+  }
+  .off_spSecond{
+    display:block;
+    @include mq(spSecond){display:none;}
+  }
+  .off_spNarrow{
+    display:block;
+    @include mq(spNarrow){display:none;}
+  }
+}

@@ -1,0 +1,61 @@
+$base_color: #003A16;
+.pagination{
+
+    ul{
+        display: inline-flex;
+        width: 100%;
+        li {
+            font-weight: 700;
+            font-size: 14px;
+
+            a {
+                border-radius: 50%;
+                justify-content: center;
+                padding: 11px;
+                display: flex;
+                margin: 15px 15px 0 0;
+                width: 50px;
+                align-items: center;
+                border: solid 1px #003A16;
+                line-height: 1.25;
+                color: #000;
+            }
+            a.active {
+                background: $base_color;
+                color: #fff;
+            }
+
+            a i.arr-next{
+                display: block;
+                position: relative;
+                width: 45px;
+                height: 21px;
+                pointer-events: none;
+                background: url(../../image/icon/arrow.svg);
+                background-size: contain !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+
+            a i.arr-prev{
+                display: block;
+                position: relative;
+                width: 45px;
+                height: 21px;
+                pointer-events: none;
+                background: url(../../image/icon/arrow.svg);
+                background-size: contain !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                -webkit-transform:rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+
+
+    }
+}

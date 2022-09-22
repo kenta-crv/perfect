@@ -1,0 +1,242 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- アトラクション
+
+-------------------------------------------------- */
+.p-attraction {
+    //正解
+    &--correct {
+        display: flex;
+        justify-content: center;
+        // position: absolute;
+        // top: 0px;
+        // height: 100%;
+        // width: 100%;
+        // background: url(/image/img/correct.png) no-repeat center center;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+        // @keyframes zoomIn {
+        // 0% {
+        //     transform: scale(0.8);
+        //     opacity: 0;
+        //     }
+        // 100% {
+        //     opacity: 1;
+        //     transform: scale(1);
+        //   }
+        // }
+        .img_maru {
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 0) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 10, 0.5, 2) 3 forwards;
+            transition-delay: 0.5s;
+            position: absolute;
+            top: 10px;
+            img {
+                height: 200px;
+                width: 200px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    // transform: scale(0.8);
+                    transform: translateX(0.8px);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(1px);
+                    // transform: scale(1);
+                }
+            }
+        }
+        .img_correct {
+            transition-delay: 1s;
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 6, 0.5, 2) 3 forwards;
+
+            position: absolute;
+            left: 0px;
+            bottom: 20%;
+            img {
+                height: 140px;
+                width: 140px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    transform: rotate(0deg);
+                }
+                50% {
+                    transform: rotate(15deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        .img_solution {
+            transition-delay: 2s;
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 6, 0.5, 2) 3 forwards;
+            position: absolute;
+            right: 0;
+            bottom: 20%;
+            img {
+                height: 140px;
+                width: 140px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    transform: scale(0.8);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    //不正解
+    &--incorrect {
+        display: flex;
+        justify-content: center;
+        // position: absolute;
+        // top: 0px;
+        // height: 100%;
+        // width: 100%;
+        // background: url(/image/img/incorrect.png) no-repeat center center;
+        // background-size: contain;
+        // background-repeat: no-repeat;
+        // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+        // @keyframes zoomIn {
+        //     0% {
+        //         transform: scale(0.8);
+        //         opacity: 0;
+        //     }
+        //     100% {
+        //         opacity: 1;
+        //         transform: scale(1);
+        //     }
+        // }
+        .img_penalty {
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 0) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 10, 0.5, 2) 3 forwards;
+            transition-delay: 0.5s;
+            position: absolute;
+            top: 16px;
+            img {
+                height: 200px;
+                width: 200px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    // transform: scale(0.8);
+                    transform: translateX(0.8px);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateX(1px);
+                    // transform: scale(1);
+                }
+            }
+        }
+        .img_not {
+            transition-delay: 1s;
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 6, 0.5, 2) 3 forwards;
+
+            position: absolute;
+            left: 0px;
+            bottom: 25%;
+            img {
+                height: 100px;
+                width: 100px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    transform: rotate(0deg);
+                }
+                50% {
+                    transform: rotate(15deg);
+                }
+                100% {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        .img_regular {
+            transition-delay: 2s;
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 6, 0.5, 2) 3 forwards;
+            position: absolute;
+            // right: 105px;
+            bottom: 25%;
+            img {
+                height: 100px;
+                width: 100px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    transform: scale(0.8);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+        .img_explanation {
+            transition-delay: 2s;
+            // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 16 forwards;
+            animation: zoomIn 1s cubic-bezier(0.25, 6, 0.5, 2) 3 forwards;
+            position: absolute;
+            right: 0;
+            bottom: 25%;
+            img {
+                height: 100px;
+                width: 100px;
+            }
+            @keyframes zoomIn {
+                0% {
+                    transform: scale(0.8);
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    //回答スタンバy
+    &--stanby {
+        // position: absolute;
+        // top: 0px;
+        // height: 100%;
+        // width: 100%;
+        height: 210px;
+        width: 215px;
+        position: absolute;
+        top: 10px;
+        left: 18%;
+        // background: url(/image/img/stanby.png) no-repeat center center;
+        // background-size: contain;
+        background-size: contain;
+        background-repeat: no-repeat;
+        // animation: zoomIn 2s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+        // animation: zoomIn 1s cubic-bezier(0.25, 2, 0.5, 2) 1 forwards;
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}

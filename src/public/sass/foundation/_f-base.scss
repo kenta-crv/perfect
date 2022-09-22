@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- html/body
+- text
+
+================================================== */
+/* ! --------------------------------------------------
+
+- html/body
+
+-------------------------------------------------- */
+html {
+  min-height: 100vh;
+  min-width: 360px;
+  display: flex;
+  overflow-x: hidden;
+  background: #333;
+}
+body {
+  color: color(base);
+  font-size: 16px;
+  display: flex;
+  flex: auto;
+  min-width: 10px;
+  font-family: 'Roboto', 'Noto Sans JP',sans-serif;
+  font-feature-settings: "palt";
+  background: #fff;
+}
+/* ! --------------------------------------------------
+
+- text
+
+-------------------------------------------------- */
+p {
+  color: color(base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5em;
+  letter-spacing: .04em;
+  word-break: break-all;
+  @include mq(sp){
+    line-height: 1.71429em;
+  }
+}
+a {  
+  color: color(base);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5em;
+  text-decoration: none;
+  cursor: pointer
+}
+::selection {
+  color: #fff;
+  background: #ccc;
+}

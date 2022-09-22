@@ -1,0 +1,33 @@
+/* ! ==================================================
+Color
+================================================== */
+$color: (
+  'main': #1150A5,
+  'accent': #E41F1F,
+  'sub': #069BDD,
+  // テキスト
+  'title': #222222,
+  'base': #444444,
+  'second': #999999,
+  'third': #aaaaaa,
+  // その他
+  'form': #91A6BE,
+  'formLine': #ccc,
+  'form--high': #518acc,
+  'line': #b6bccc,
+  'background': #e6e9f1,// #F6F7FA,
+  'background--light': #fafafd,
+  'error': #F75769,
+  'alert': #F75769,
+  'alertBackground': #FFEEF0,
+  'correct': #4AD1A2,
+  // カラー
+  'blue': #1781EB,
+  'deep--blue': #1B264C,
+  'thin--blue': #CBDBF1,
+  'white': #fff,
+  'red': #D32320,
+  'black': #000,
+  'gray': #ddd,
+
+) !default;

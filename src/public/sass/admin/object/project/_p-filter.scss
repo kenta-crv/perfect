@@ -1,0 +1,50 @@
+.p-filter {
+  display: flex;
+  &__main {
+    flex: auto;
+    min-width: 0;
+  }
+  &__sub {
+    flex: 0 0 64px;
+    margin: 0 0 0 10px;
+    button{
+	    background: #000;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: flex-end;
+    margin: -4px;
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      &__label {
+        @extend %c-text__unit;
+        margin: 0 4px 0 0;
+      }
+      &__data {
+	      .c-input{      
+	        select{
+		      	height: 30px;
+		      	border-radius: 0;
+	        }
+	        input{
+		        height: 30px;
+		        border-radius: 0;
+	        }
+        }
+        &__flex {
+	        display: flex;
+	        align-items: center;
+	        margin: -4px;
+	        >li{
+		        margin: 4px;
+	        }
+        }
+      }
+    }
+  }
+}

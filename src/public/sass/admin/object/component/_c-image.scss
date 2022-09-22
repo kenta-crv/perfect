@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- イメージ[サムネイル、アイキャッチなど]
+
+================================================== */
+/* ! --------------------------------------------------
+
+- イメージ
+
+-------------------------------------------------- */
+.c-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+  }
+  @for $i from 1 through 50 {
+    $space: $i * 8;
+    &--#{$space} {
+      max-width: #{$space}px;
+    }
+  }
+  &--standard {
+    &:before {
+      padding-top: 75%;
+    }
+  }
+  &--wide {
+    &:before {
+      padding-top: 56.25%;
+    }
+  }
+  &--round {
+    border-radius: 50%;
+  }
+}

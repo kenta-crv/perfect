@@ -1,0 +1,14 @@
+@charset "UTF-8";//上書き
+@import "foundation/variable/_v-color"; //色
+@import "foundation/variable/_v-mediaQuery"; //メディアクエリ
+@import "layout/_l-base"; //body
+@import "layout/_l-header"; //ヘッダー
+@import "layout/_l-footer"; //フッター
+@import "layout/_l-home"; //ホーム
+@import "layout/_l-page"; //ページ
+@import "admin/object/project/_p-script";// 追加
+@import "object/component/_c-text"; //テキスト
+@import "object/component/_c-image"; //image
+@import "object/component/_c-input"; //input
+@import "object/component/_c-button"; //button
+@import "object/component/_c-br"; //br

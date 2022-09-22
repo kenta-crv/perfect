@@ -1,0 +1,20 @@
+.p-bread {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  &__list {
+    display: flex;
+    align-items: center;
+    &__item {
+	    &__button{
+		    border: 1px solid #CBCBCB;
+			  color: #BEBEBF;
+		    padding: 5px 10px;
+		    &--current{
+			    border: 1px solid #DB2220;
+			    color: #DB2220;
+		    }
+	    }
+    }
+  }
+}

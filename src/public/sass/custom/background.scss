@@ -1,0 +1,157 @@
+$base_rorate: 180deg;
+.c-icn-spch-bbl{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 3px;
+    width: 25px;
+    height: 25px;
+    left: -4px;
+    pointer-events: none;
+    background: url(../../image/icon/spch-bbl.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+.c-icn-add{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    left: 15px;
+    background: url(../../image/icon/add_icon.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-icn-polygon-up{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    left: -4px;
+    background: url(../../image/icon/ico_polygon.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-icn-polygon-down{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transform: rotateX($base_rorate);
+    left: -4px;
+    background: url(../../image/icon/ico_polygon.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-icn-polygon-down-active{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    left: -4px;
+    background: url(../../image/icon/ico_polygon_active.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-icn-polygon-up-active{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transform: rotateX($base_rorate);
+    left: -4px;
+    background: url(../../image/icon/ico_polygon_active.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-icn-close{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    left: -4px;
+    background: url(../../image/icon/close.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+
+
+.c-icn-chk-mark{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    margin: 0 auto 0 auto;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    left: -4px;
+    background: url(../../image/icon/check-mark.png);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+.c-icn-select{
+    height: 41px;
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-family: "noto sans jp";
+    appearance: none;
+    background-image: url(../../image/icon/path_138.svg);
+    border: 1px solid #333;
+    background-size: 25px;
+    border-radius: 3px;
+    border-image: initial;
+    padding: 10px 15px;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+}
+
+.t-tlt-bbl{
+    content: "";
+    display: inline-flex;
+    position: relative;
+    /* right: -14%; */
+    left: -34px;
+    width: 200px;
+    height: 70px;
+    pointer-events: none;
+    background: url(/images/bbl.png?6367146…);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    visibility: hidden;
+    margin-bottom: -102px;
+    top: -92px;
+}

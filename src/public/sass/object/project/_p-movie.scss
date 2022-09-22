@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* ! --------------------------------------------------
+
+- 詳細ページ
+
+-------------------------------------------------- */
+
+.p-movie {
+    //クイズ動画
+    width: 100%;
+    height: 0;
+    padding-top: 56%;
+    position: relative;
+    video {
+      background: #000;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .follow{
+      display: flex;
+      justify-content: center;
+      .text{
+        position: absolute;
+        top: 0;
+        color: #fff;
+        padding: 8px 12px;
+        font-size: 12px;
+      }
+    }
+    .cnt {
+        margin: 12px;
+        @extend %c-text__lv7;
+    }
+}
+.p-movie:not(.off) {
+  &:before{
+    content: "";
+    display: block;
+    // width: 427px;
+    // height: 233px;
+    background: url("/image/img/playback.png") no-repeat center center;
+    background-size: contain !important;
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+  }
+}

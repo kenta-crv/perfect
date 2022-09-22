@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+枠組み
+-------------------------------------------------- */
+.l-frame {
+  flex: auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  &__header {
+  }
+  &__row {
+    flex: auto;
+    min-width: 0;
+    display: flex;
+  }
+  &__main {
+    display: flex;
+    flex: auto;
+    min-width: 0;
+  }
+  &__sidebar {
+    flex: 0 0 200px;
+    background: #000;
+  }
+  &__footer {
+    height: auto;
+  }
+}

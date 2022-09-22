@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="グループ_15351" data-name="グループ 15351" transform="translate(-3356 -3163)">
+    <rect id="長方形_15354" data-name="長方形 15354" width="25" height="25" transform="translate(3356 3163)" fill="#8b6363" opacity="0"/>
+    <g id="dashboard" transform="translate(3360.514 3167.514)">
+      <g id="グループ_15349" data-name="グループ 15349">
+        <g id="グループ_15348" data-name="グループ 15348">
+          <rect id="長方形_15356" data-name="長方形 15356" width="7.099" height="5.324" transform="translate(8.873)" fill="#fff"/>
+          <rect id="長方形_15357" data-name="長方形 15357" width="7.099" height="8.873" fill="#fff"/>
+          <rect id="長方形_15358" data-name="長方形 15358" width="7.099" height="5.324" transform="translate(0 10.648)" fill="#fff"/>
+          <rect id="長方形_15359" data-name="長方形 15359" width="7.099" height="8.873" transform="translate(8.873 7.099)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- フッター
+
+-------------------------------------------------- */
+.p-footer {
+	background: color("background_blue");
+  &__nav{  
+	  padding: 25px 0;
+	  &__list{
+		  display: flex;
+			flex-direction: column;
+			align-content: center;
+			>li{
+				padding: 0 0 12px;
+		    margin: 0 0 12px;
+		    border-bottom: 2px dotted #e2e2e2;
+		    border-color: #D8D8D8;
+				+li{
+				}
+				a{
+					@extend %c-text__lv6;
+					color: color("text_white");
+					text-align: center;
+			    display: flex;
+			    line-height: 1em;
+				}
+			}
+	  }
+  }
+  &__info{
+	  background: color("background_black");
+	  text-align: center;
+	  padding: 20px 0;
+    margin: 0 -12px;
+	  .copyright{
+		  @extend %c-text__lv8;
+		  color: color("text_white");
+		  font-family: 'Roboto',sans-serif;
+	  }
+  }
+}
+
+

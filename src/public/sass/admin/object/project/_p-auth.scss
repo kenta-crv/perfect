@@ -1,0 +1,36 @@
+.p-auth {
+  flex: auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__box {
+    width: 360px;
+    padding: 56px 40px 80px;
+    background: #fff;
+    box-shadow: 0px 16px 12px -8px rgba(0,0,0,.2);
+    &__head {
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__logo {
+        margin: 0 0 16px;
+      }
+      &__title {
+        @extend %c-text__lv3;
+        @extend %c-text__bold;
+      }
+    }
+    &__body {
+      .c-input {
+        input {
+          height: 40px;
+        }      
+      }
+      .c-button {
+        box-shadow: 0px 4px 4px -2px rgba(0,0,0,.1);
+      }
+    }
+  }
+}

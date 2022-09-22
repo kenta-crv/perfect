@@ -1,0 +1,9 @@
+version: 0.0  # 0.0固定
+os: linux     # デプロイ先サーバーのOS
+files:        # アプリケーションの配置場所
+  - source: /
+    destination: /usr/share/nginx/html
+Hooks:
+  AfterInstall:
+    - location: hooks/AfterInstall.sh
+      runas: root

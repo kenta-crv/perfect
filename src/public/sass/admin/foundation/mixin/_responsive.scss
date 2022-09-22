@@ -1,0 +1,8 @@
+/* ! --------------------------------------------------
+Responsive
+-------------------------------------------------- */
+@mixin responsive($point) {
+  @media screen and (max-width: #{map-get($breakPoint, $point)}) {
+    @content;
+  }
+}

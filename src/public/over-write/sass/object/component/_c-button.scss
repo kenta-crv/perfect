@@ -1,0 +1,105 @@
+@charset "UTF-8";
+.l-body{
+  .c-buttonArea{
+    display: flex; flex-wrap:wrap;
+    >*{
+      +*{
+        margin:0;
+        margin-top: 16px;
+      }
+    }
+    &__center{
+      @extend .c-buttonArea;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .c-button{
+    &--search{
+      background: #000;
+      border: #fff 1px solid;
+      border-radius: 0;
+    }
+    &__line{
+      background: #fff;
+      border: #1D4E90 1px solid;
+      border-radius: 3px;
+      color: #1D4E90;
+      display:inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      width: 50px;
+      margin: 0 4px 0 auto;
+    }
+    &__text{
+      background-color: transparent;
+      border: none;
+    }
+    &__line--gray{
+      color: #aaa;
+      font-size: 12px;
+      background: transparent;
+      border: #aaa 1px solid;
+      border-radius: 3px;
+      color: #aaa;
+      display:inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px 8px;
+      height: 30px;
+      min-width: 50px;
+    }
+    &__line--white{
+      color: #fff;
+      font-size: 12px;
+      background: transparent;
+      border: #fff 1px solid;
+      border-radius: 3px;
+      color: #fff;
+      display:inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2px 8px;
+      height: 40px;
+      min-width: 50px;
+    }
+  }
+  .c-button--icon__arrow_event{
+    position: inherit;
+    &:before{
+      left:inherit;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  // 赤いボタン
+  .header-danger{
+    border: #bc1818 1px solid;
+    height: 50px;
+    &:hover{
+      background: #fff;
+      color: #bc1818;
+    }
+    &-button{
+      @extend .header-danger;
+    }
+  }
+  .c-exit{
+    margin:16px 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >*{
+    }
+  }
+  .p-show__action,.padding-all--01 {
+    p{
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,228 @@
+.plans-2 table .plan-header .basic-2 {
+    background: #D8D8D8;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.plans-2 table .plan-header .mid-2 {
+    text-align: center;
+    background: #888888;
+    min-height: 40px;
+    color: #fff;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.plans-2 table .plan-header .starter {
+    text-align: center;
+    background-image: linear-gradient(to right, #7FD43E, #3dc599);
+    min-height: 40px;
+    color: #fff;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.plans-2 table .plan-header .basic-plan {
+    text-align: center;
+    background-image: linear-gradient(to right, #2E65A5, #2B8797);
+    min-height: 40px;
+    color: #fff;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+.plans-2 table .plan-header .enterprise {
+    text-align: center;
+    background-image: linear-gradient(to right, #815DD3, #1F4853);
+    min-height: 40px;
+    color: #fff;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mid-2 p, .high p , .starter p, .basic-plan p, .enterprise p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+button.c-button_10.c-button--full_home.c-button--thinBlue.btn-right-rate {
+    width: 60%;
+    border: 1px solid #128374;
+}
+
+button.c-button_10-black.c-button--full_home.c-button--thinBlue{
+    width: 60%;
+    background: #000;
+    color: #fff;
+}
+
+.plans-2 {
+    overflow-x: auto;
+    box-shadow: 0px 2px #eee;
+    border-radius: 14px;
+}
+
+.plans-2 table .plan-header{
+    padding: 10px;
+}
+.plans-2 table .plan-header .basic{
+    background: #D8D8D8;
+    text-align: center;
+    border-radius: 10px;
+}
+
+td.td_home_3 {
+    font-weight: bold;
+    background: #EDEDED;
+}
+td.td_home_3::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 79%;
+    width: 20px;
+    height: 20.8px;
+    pointer-events: none;
+    background: url(../../image/icon/plan_question.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    top: 448px;
+}
+
+td.td_home_4 {
+    font-weight: bold;
+    background: #D8D8D8;
+}
+
+td.td_home_4::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 79%;
+    width: 20px;
+    height: 20.8px;
+    pointer-events: none;
+    background: url(../../image/icon/plan_question.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    top: 493px;
+}
+
+td.td_home_5 {
+    font-weight: bold;
+    background: #EDEDED;
+}
+
+td.td_home_5::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 79%;
+    width: 20px;
+    height: 20.8px;
+    pointer-events: none;
+    background: url(../../image/icon/plan_question.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    top: 539px;
+}
+
+.footer-link {
+    margin-top: 10px;
+    margin-left: 7px;
+    position: relative;
+    display: inline-flex;
+}
+
+a.footer-link2 {
+    color: #000;
+    text-decoration: underline;
+}
+.basic_2{
+    background: #888888;
+    text-align: center;
+    width: 258px;
+    height: 166px;
+
+}
+
+.price_zero{
+    font-size: 34px;
+    color: white;
+    font-weight: bold;
+
+}
+.trial_price{
+    text-align: center;
+    color: white !important;
+}
+.price_desc{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.basic_price {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    background: #D8D8D8;
+    text-align: center;
+    border-top-left-radius: 10px;
+    width: 258px;
+    height: 166px;
+}
+.price_desc{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+.highest {
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #815DD3, #184749);
+    min-height: 40px;
+    color: #fff;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    width: 258px;
+    height: 166px;
+    padding-top: 15px;
+}
+.title_plan{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.img_question{
+    float: right;
+    width: 26px;
+    height: 26px;
+}
+
+.plan_sleep span{
+    font-size: 14px;
+    text-decoration: underline;
+    color: #003A16;
+
+}
+
+.plan_sleep {
+    margin-top: 25px;
+}
+
+span.plan_sleep1 {
+    margin-left: 25px;
+}

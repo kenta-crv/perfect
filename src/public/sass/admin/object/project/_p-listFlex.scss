@@ -1,0 +1,63 @@
+$listColumn: '.p-listFlex--column';
+.p-listFlex {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    & + & {
+      margin: 8px 0 0;
+      padding: 12px 0 0;
+      .p-list--line & {
+        border-top: 1px solid color(line);
+      }
+    }
+    #{$listColumn} & {
+      flex-wrap: wrap;
+    }
+    &__label {
+      @extend %c-text__lv6;
+      letter-spacing: 0;
+      display: inline-block;
+      margin: 0 16px 0 0;
+      flex: 0 0 100px;
+      position: relative;
+      #{$listColumn} & {
+        flex: 0 0 100%;
+        margin: 0 0 4px;
+      }
+      .required {
+        display: block;
+        width: 4px;
+        height: 4px;
+        border-radius: 100px;
+        background: red;
+        position: absolute;
+        top: -6px;
+        left: 0;
+      }
+    }
+    &__data {
+	    margin: 10px 0 0;
+      color: color(base);
+      font-size: 15px;
+      flex: auto;
+      min-width: 0;
+      &__scroll {
+        max-height: 100px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 2px;
+        	background: #F2F4F7;
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 2px;
+        	background: #0A2372;
+        }
+      }
+    }
+  }
+  
+}

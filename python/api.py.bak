@@ -1,0 +1,653 @@
+import string, ast
+from tokyu.Tokyu import *
+from mitsui.Mitsui import *
+from sumitomo.Sumitomo import *
+from reins.Reins import *
+from itandibb.Itandibb import *
+from atbb import main as atbb
+
+from flask import Flask
+from flask_restful import Api, Resource, reqparse
+from flask_cors import CORS
+from waitress import serve
+
+app = Flask(__name__)
+CORS(app)
+api = Api(app)
+
+states = {
+  'tokyu_browser' : {},
+  'tokyu_login' : False,
+  'mitsui_browser' : {},
+  'mitsui_login' : False,
+  'sumitomo_browser' : None,
+  'sumitomo_login' : False,
+  'reins_browser' : None,
+  'reins_login' : False,
+  'atbb_browser' : None,
+  'atbb_login' : False,
+  'itandibb_browser' : {},
+  'itandibb_login' : False,
+}
+
+tokyu_property_args = reqparse.RequestParser()
+tokyu_property_args.add_argument("cities", type=str, help="Cities is required", required=False)
+tokyu_property_args.add_argument("object_type", type=list, help="Object Type is required", required=False)
+tokyu_property_args.add_argument('object_type', action='append')
+tokyu_property_args.add_argument("routes", type=list, help="Station Routes is required", required=False)
+tokyu_property_args.add_argument('routes', action='append')
+tokyu_property_args.add_argument("year_build_min", type=int, required=False)
+tokyu_property_args.add_argument("year_build_max", type=int, required=False)
+tokyu_property_args.add_argument("from_station", type=int, required=False)
+tokyu_property_args.add_argument("area_min", type=int, required=False)
+tokyu_property_args.add_argument("area_max", type=int, required=False)
+tokyu_property_args.add_argument("fee_min", type=str, required=False)
+tokyu_property_args.add_argument("fee_max", type=str, required=False)
+tokyu_property_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+tokyu_property_args.add_argument("madori", type=list, required=False)
+tokyu_property_args.add_argument('madori', action='append')
+tokyu_property_args.add_argument("property_name", type=str, required=False)
+tokyu_property_args.add_argument("browser_id", type=str, required=False)
+tokyu_property_args.add_argument("ptable", type=str, required=False)
+
+# year_build_min, year_build_max, from_station, area_min, area_max, fee_min, fee_max, madori, name
+class TokyuSearchProperty(Resource):
+  def post(self,  search_or_batch):
+    # Init Helper
+    helper = Tokyu()
+    if(search_or_batch == 'search_property'):
+
+      # Set Browser
+      browser = None
+      # if(states['tokyu_browser'] == None):
+      browser = helper.new_browser(debug=False)
+        # states['tokyu_browser'] = browser
+      # else:
+      #   browser = states['tokyu_browser']
+      # Login
+      # login_response = {'status' : 200} if states['tokyu_login'] is True else 
+      helper.login(browser)
+      # if(login_response['status'] == 200):
+      #   states['tokyu_login'] = True
+      args = tokyu_property_args.parse_args()
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      app.logger.debug(args['year_build_max'])
+      response = {}
+
+        #first_ten = args['first_ten'] if 'first_ten' in args else False
+        # try:
+          #response = helper.search(browser, args, states['tokyu_login'], first_ten = True)
+      # response = helper.search(browser, args, states['tokyu_login'], args['first_ten'])
+      response = helper.new_search(browser, args, states['tokyu_login'], args['first_ten'])
+        # except:
+        #   response = {
+        #     'status' : 500,
+        #     'message': 'Server Error'
+        #   }
+
+        
+      return response
+        # return {
+        #   'message': 'Ready for Search.',
+        #   'test': args
+        # }
+      # elif(login_response['status'] == 500):
+      #   return {
+      #     'message': 'Login Error. Please Check Login Key.'
+      #   }
+    elif (search_or_batch == 'get_ptable'):
+
+      # Set Browser
+      browser = None
+      # if(states['tokyu_browser'] == None):
+      browser = helper.new_browser(debug=False)
+        # states['tokyu_browser'] = browser
+      # else:
+      #   browser = states['tokyu_browser']
+      # Login
+      # login_response = {'status' : 200} if states['tokyu_login'] is True else 
+      helper.login(browser)
+      # if(login_response['status'] == 200):
+      #   states['tokyu_login'] = True
+      args = tokyu_property_args.parse_args()
+      states['tokyu_browser'][args['browser_id']] = browser
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      app.logger.debug(args['year_build_max'])
+      response = {}
+
+        #first_ten = args['first_ten'] if 'first_ten' in args else False
+        # try:
+          #response = helper.search(browser, args, states['tokyu_login'], first_ten = True)
+      # response = helper.search(browser, args, states['tokyu_login'], args['first_ten'])
+      response = helper.ptable_search(browser, args, states['tokyu_login'], args['first_ten'], args['browser_id'])
+        # except:
+        #   response = {
+        #     'status' : 500,
+        #     'message': 'Server Error'
+        #   }
+
+        
+      return response
+    elif (search_or_batch == 'get_batch'):
+      args = tokyu_property_args.parse_args()
+      browser_id = args['browser_id']
+      browser = states['tokyu_browser'][browser_id]
+      args['ptable'] = ast.literal_eval(args['ptable']) if args['ptable'] is not None else None
+
+      # Traverse PTABLE
+      result = helper.getResult(browser, args['ptable'])
+
+      if(len(result['ptable']) == 0):
+        browser_id = 0
+
+      return {
+        'status' : 200,
+        'browser_table' : {
+          'browser_id' : browser_id,
+          'ptable' : json.dumps(result['ptable'])
+        },
+        'payload' : result['payload'],
+      }
+
+# mitsui_property_args = reqparse.RequestParser()
+# mitsui_property_args.add_argument("prefectures", type=list, help="Prefectures is required", required=True)
+# mitsui_property_args.add_argument('prefectures', action='append')
+# mitsui_property_args.add_argument("locations", type=list, help="Locations is required", required=False)
+# mitsui_property_args.add_argument('locations', action='append')
+# mitsui_property_args.add_argument("madori_list", type=list, help="Madori is required", required=True)
+# mitsui_property_args.add_argument('madori_list', action='append')
+# mitsui_property_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+mitsui_property_args = reqparse.RequestParser()
+mitsui_property_args.add_argument("prefectures", type=list, help="Prefecture is required", required=False)
+mitsui_property_args.add_argument('prefectures', action='append')
+mitsui_property_args.add_argument("cities", type=str, help="Cities is required", required=False)
+mitsui_property_args.add_argument("object_type", type=list, help="Object Type is required", required=False)
+mitsui_property_args.add_argument('object_type', action='append')
+mitsui_property_args.add_argument("routes", type=list, help="Station Routes is required", required=False)
+mitsui_property_args.add_argument('routes', action='append')
+mitsui_property_args.add_argument("route_prefectures", type=list, help="Routes Prefecture is required", required=False)
+mitsui_property_args.add_argument('route_prefectures', action='append')
+mitsui_property_args.add_argument("year_build_min", type=int, required=False)
+mitsui_property_args.add_argument("year_build_max", type=int, required=False)
+mitsui_property_args.add_argument("from_station", type=int, required=False)
+mitsui_property_args.add_argument("area_min", type=int, required=False)
+mitsui_property_args.add_argument("area_max", type=int, required=False)
+mitsui_property_args.add_argument("fee_min", type=str, required=False)
+mitsui_property_args.add_argument("fee_max", type=str, required=False)
+mitsui_property_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+mitsui_property_args.add_argument("madori", type=list, required=False)
+mitsui_property_args.add_argument('madori', action='append')
+mitsui_property_args.add_argument("property_name", type=str, required=False)
+mitsui_property_args.add_argument("browser_id", type=str, required=False)
+mitsui_property_args.add_argument("last_index", type=int, required=False)
+class MitsuiSearchProperty(Resource):
+  def post(self,  search_or_batch):
+    if(search_or_batch == 'search_property'):
+      # Init Helper
+      helper = Mitsui()
+
+      # Set Browser
+      browser = None
+      # if(states['mitsui_browser'] == None):
+      browser = helper.new_browser(debug=False)
+        # states['mitsui_browser'] = browser
+      # else:
+      #   browser = states['mitsui_browser']
+      # Login
+      # login_response = {'status' : 200} if states['mitsui_login'] is True else 
+      helper.login(browser)
+      # if(login_response['status'] == 200):
+      #   states['mitsui_login'] = True
+      args = mitsui_property_args.parse_args()
+      # args['locations'] = [] if args['locations'] == None else args['locations']
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      args['year_build_min'] = float(args['year_build_min']) if args['year_build_min'] != None else 0
+      args['year_build_max'] = float(args['year_build_max']) if args['year_build_max'] != None else 0
+      args['from_station'] = float(args['from_station']) if args['from_station'] != None else 0
+      response = {}
+        
+        #first_ten = args['first_ten'] if 'first_ten' in args else False
+
+        # try:
+          #response = helper.search(browser, args, states['mitsui_login'], first_ten = True)
+      response = helper.new_search(browser, args, states['mitsui_login'], args['first_ten'])
+        # except:
+        #   response = {
+        #     'status' : 500,
+        #     'message': 'Server Error'
+        #   }
+
+        
+      return response
+        # return {
+        #   'message': 'Ready for Search.',
+        #   'test': args
+        # }
+      # elif(login_response['status'] == 500):
+      #   return {
+      #     'message': 'Login Error. Please Check Login Key.'
+      #   }
+    elif (search_or_batch == 'get_ptable'):
+      
+      # Init Helper
+      helper = Mitsui()
+
+      # Set Browser
+      browser = None
+      # if(states['mitsui_browser'] == None):
+      browser = helper.new_browser(debug=False)
+        # states['mitsui_browser'] = browser
+      # else:
+      #   browser = states['mitsui_browser']
+      # Login
+      # login_response = {'status' : 200} if states['mitsui_login'] is True else 
+      helper.login(browser)
+      # if(login_response['status'] == 200):
+      #   states['mitsui_login'] = True
+      args = mitsui_property_args.parse_args()
+      print('browser id:' + args['browser_id'])
+      states['mitsui_browser'][args['browser_id']] = browser
+      # args['locations'] = [] if args['locations'] == None else args['locations']
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      args['year_build_min'] = float(args['year_build_min']) if args['year_build_min'] != None else 0
+      args['year_build_max'] = float(args['year_build_max']) if args['year_build_max'] != None else 0
+      args['from_station'] = float(args['from_station']) if args['from_station'] != None else 0
+      response = {}
+        
+        #first_ten = args['first_ten'] if 'first_ten' in args else False
+
+        # try:
+          #response = helper.search(browser, args, states['mitsui_login'], first_ten = True)
+      response = helper.ptable_search(browser, args, args['browser_id'])
+        # except:
+        #   response = {
+        #     'status' : 500,
+        #     'message': 'Server Error'
+        #   }
+
+        
+      return response
+    elif (search_or_batch == 'get_batch'):
+      
+      helper = Mitsui()
+      args = mitsui_property_args.parse_args()
+      browser_id = args['browser_id']
+      browser = states['mitsui_browser'][browser_id]
+
+      # Traverse PTABLE
+      result = helper.getSmallBatchResult(browser)
+
+      if (result['has_next'] == -1):
+        browser_id = 0
+
+      return {
+        'status' : 200,
+        'browser_table' : {
+          'browser_id' : browser_id,
+          'has_next' : result['has_next']
+        },
+        'payload' : result['payload'],
+      }
+
+
+# sumitomo_property_args = reqparse.RequestParser()
+# sumitomo_property_args.add_argument("locations", type=list, help="Locations is required", required=False)
+# sumitomo_property_args.add_argument('locations', action='append')
+# sumitomo_property_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+sumitomo_property_args = reqparse.RequestParser()
+sumitomo_property_args.add_argument("cities", type=str, help="Cities is required", required=True)
+sumitomo_property_args.add_argument("object_type", type=list, help="Object Type is required", required=False)
+sumitomo_property_args.add_argument('object_type', action='append')
+sumitomo_property_args.add_argument("year_build_min", type=int, required=False)
+sumitomo_property_args.add_argument("year_build_max", type=int, required=False)
+sumitomo_property_args.add_argument("from_station", type=int, required=False)
+sumitomo_property_args.add_argument("area_min", type=int, required=False)
+sumitomo_property_args.add_argument("area_max", type=int, required=False)
+sumitomo_property_args.add_argument("fee_min", type=str, required=False)
+sumitomo_property_args.add_argument("fee_max", type=str, required=False)
+sumitomo_property_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+sumitomo_property_args.add_argument("madori", type=list, required=False)
+sumitomo_property_args.add_argument('madori', action='append')
+sumitomo_property_args.add_argument("property_name", type=str, required=False)
+class SumitomoSearchProperty(Resource):
+  def post(self):
+    # Init Helper
+    helper = Sumitomo()
+
+    # Set Browser
+    browser = None
+    # if(states['sumitomo_browser'] == None):
+    browser = helper.new_browser(debug=False)
+      # states['sumitomo_browser'] = browser
+    # else:
+    #   browser = states['sumitomo_browser']
+    # Login
+    # login_response = {'status' : 200} if states['sumitomo_login'] is True else 
+    helper.login(browser)
+    # if(login_response['status'] == 200):
+    #   states['sumitomo_login'] = True
+    args = sumitomo_property_args.parse_args()
+    args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+    args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+    args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+    args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+    args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+    app.logger.debug(args['madori'])
+    response = {} 
+      
+      #first_ten = args['first_ten'] if 'first_ten' in args else False
+
+      # try:
+        # response = helper.search(browser, args, states['sumitomo_login'], first_ten = True)
+    response = helper.search(browser, args, states['sumitomo_login'], args['first_ten'])
+      # except:
+      #   response = {
+      #     'status' : 500,
+      #     'message': 'Server Error'
+      #   }
+
+      
+    return response
+      # return {
+      #   'message': 'Ready for Search.',
+      #   'test': args
+      # }
+    # elif(login_response['status'] == 500):
+    #   return {
+    #     'message': 'Login Error. Please Check Login Key.'
+    #   }
+
+reins_property_args = reqparse.RequestParser()
+reins_property_args.add_argument("object_type", type=list, help="Object Type is required", required=True)
+reins_property_args.add_argument('object_type', action='append')
+reins_property_args.add_argument("prefectures", type=list, help="Prefectures is required", required=True)
+reins_property_args.add_argument('prefectures', action='append')
+reins_property_args.add_argument("cities", type=str, help="Cities is required", required=False)
+reins_property_args.add_argument("zumen_flag", type=bool, help="zumen_flag is required", required=False)
+reins_property_args.add_argument("image_flag", type=bool, help="image_flag is required", required=False)
+reins_property_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+reins_property_args.add_argument("madori", type=list, help="Madori is required", required=False)
+reins_property_args.add_argument('madori', action='append')
+# reins_property_args.add_argument("kind1", type=str, help="kind1 is required", required=False)
+# reins_property_args.add_argument("type1", type=str, help="type1 is required", required=False)
+# reins_property_args.add_argument("pref", type=str, help="pref is required", required=False)
+# reins_property_args.add_argument("address1", type=str, help="address1 is required", required=False)
+class ReinsSearchProperty(Resource):
+  def post(self):
+    # Init Helper
+    helper = Reins()
+
+    # Set Browser
+    browser = None
+    # if(states['reins_browser'] == None):
+    browser = helper.new_browser(debug=False)
+    #   states['reins_browser'] = browser
+    # else:
+    #   browser = states['reins_browser']
+    # Login
+    # login_response = {'status' : 200} if states['reins_login'] is True else 
+    helper.login(browser)
+    # if(login_response['status'] == 200):
+    #   states['reins_login'] = True
+    args = reins_property_args.parse_args()
+    args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+    if(args['zumen_flag'] == None):
+      args['zumen_flag'] = True
+    
+    if(args['image_flag'] == None):
+      args['image_flag'] = True
+      # first_ten
+      #first_ten = args['first_ten'] if 'first_ten' in args else False
+
+    response = {}
+    # try:
+      # response = helper.new_search(browser, args, states['reins_login'], first_ten = True)
+    response = helper.new_search(browser, args, states['reins_login'], args['first_ten'])
+      # except:
+      #   response = {
+      #     'status' : 500,
+      #     'message': 'Server Error'
+      #   }
+
+      
+    return response
+      # return {
+      #   'message': 'Ready for Search.',
+      #   'test': args
+      # }
+    # elif(login_response['status'] == 500):
+    #   return {
+    #     'message': 'Login Error. Please Check Login Key.'
+    #   }
+
+# atbb_args = reqparse.RequestParser()
+# atbb_args.add_argument("type", type=str, help="Type is required", required=True)
+# atbb_args.add_argument("locations", type=list, help="Location is required", required=True )
+# atbb_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+atbb_args = reqparse.RequestParser()
+atbb_args.add_argument("prefectures", type=list, help="Prefecture is required", required=False)
+atbb_args.add_argument('prefectures', action='append')
+atbb_args.add_argument("cities", type=str, help="Cities is required", required=False)
+atbb_args.add_argument("object_type", type=list, help="Object Type is required", required=False)
+atbb_args.add_argument('object_type', action='append')
+atbb_args.add_argument("routes", type=list, help="Station Routes is required", required=False)
+atbb_args.add_argument('routes', action='append')
+atbb_args.add_argument("route_prefectures", type=list, help="Routes Prefecture is required", required=False)
+atbb_args.add_argument('route_prefectures', action='append')
+atbb_args.add_argument("year_build_min", type=int, required=False)
+atbb_args.add_argument("year_build_max", type=int, required=False)
+atbb_args.add_argument("from_station", type=int, required=False)
+atbb_args.add_argument("area_min", type=int, required=False)
+atbb_args.add_argument("area_max", type=int, required=False)
+atbb_args.add_argument("fee_min", type=str, required=False)
+atbb_args.add_argument("fee_max", type=str, required=False)
+atbb_args.add_argument("step_min", type=str, required=False)
+atbb_args.add_argument("step_max", type=str, required=False)
+atbb_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+atbb_args.add_argument("madori", type=list, required=False)
+atbb_args.add_argument('madori', action='append')
+atbb_args.add_argument("property_name", type=str, required=False)
+atbb_args.add_argument("publishing_date", type=str, required=False)
+atbb_args.add_argument("floor_option", type=str, required=False)
+atbb_args.add_argument("trade_style", type=list, help="Trade Style is required", required=False)
+atbb_args.add_argument('trade_style', action='append')
+atbb_args.add_argument("bldg_structure", type=list, help="Building Structure is required", required=False)
+atbb_args.add_argument('bldg_structure', action='append')
+
+class AtbbSearchProperty(Resource):
+    def post(self):
+      # Check Log-in State
+      browser = None
+      # if(states['atbb_login'] is not True):
+      #   # Login
+      browser = atbb.login_only()
+        # if browser is not False:
+        #   response = False
+        #   while(response is False):
+      response = atbb.connect_only(browser)
+      #       if response is not False:
+      #         states['atbb_browser'] = response
+      #         browser = response
+      #         states['atbb_login'] = True
+      #   else:
+      #     states['atbb_browser'] = None
+      #     states['atbb_login'] = False
+
+      # # Search
+      # browser  = states['atbb_browser']
+      # # Connect
+      # if(browser is not None):
+      #   # Check arguements
+      args = atbb_args.parse_args()
+      # parser = reqparse.RequestParser()
+      # parser.add_argument('locations', action='append')
+      # parser = parser.parse_args()
+      # args['locations'] = parser['locations']
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['step_min'] = float(args['step_min']) if args['step_min'] != None else 0
+      args['step_max'] = float(args['step_max']) if args['step_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      args['year_build_min'] = float(args['year_build_min']) if args['year_build_min'] != None else 0
+      args['year_build_max'] = float(args['year_build_max']) if args['year_build_max'] != None else 0
+      args['from_station'] = float(args['from_station']) if args['from_station'] != None else 0
+        #first_ten = args['first_ten'] if 'first_ten' in args else False
+      
+        # try:
+          #response = atbb.search_only(browser, args, first_ten = True)
+      response = atbb.search_only(browser, args, args['first_ten'])
+          
+        # except:
+        #   response = {
+        #   'status' : 500,
+        #   'message': 'Error'
+        # }
+
+      return response
+    # else:
+    #   return  {
+    #     'status' : 500,
+    #     'message': 'Please Login...'
+    #   }
+
+itandibb_args = reqparse.RequestParser()
+# itandibb_args.add_argument("object_type", type=list, help="Object Type is required", required=True)
+# itandibb_args.add_argument("prefecture", type=str, help="Prefecture is required", required=True)
+# itandibb_args.add_argument("address", type=str, help="Address is required", required=True)
+# itandibb_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+itandibb_args.add_argument("prefectures", type=list, help="Prefecture is required", required=False)
+itandibb_args.add_argument('prefectures', action='append')
+itandibb_args.add_argument("cities", type=str, help="Cities is required", required=False)
+itandibb_args.add_argument("object_type", type=list, help="Object Type is required", required=False)
+itandibb_args.add_argument('object_type', action='append')
+itandibb_args.add_argument("routes", type=list, help="Station Routes is required", required=False)
+itandibb_args.add_argument('routes', action='append')
+itandibb_args.add_argument("route_prefectures", type=list, help="Routes Prefecture is required", required=False)
+itandibb_args.add_argument('route_prefectures', action='append')
+itandibb_args.add_argument("year_build_min", type=int, required=False)
+itandibb_args.add_argument("year_build_max", type=int, required=False)
+itandibb_args.add_argument("from_station", type=int, required=False)
+itandibb_args.add_argument("area_min", type=int, required=False)
+itandibb_args.add_argument("area_max", type=int, required=False)
+itandibb_args.add_argument("fee_min", type=str, required=False)
+itandibb_args.add_argument("fee_max", type=str, required=False)
+itandibb_args.add_argument("step_min", type=str, required=False)
+itandibb_args.add_argument("step_max", type=str, required=False)
+itandibb_args.add_argument("first_ten", type=bool, help="first_ten is required", required=False)
+itandibb_args.add_argument("madori", type=list, required=False)
+itandibb_args.add_argument('madori', action='append')
+itandibb_args.add_argument("property_name", type=str, required=False)
+itandibb_args.add_argument("publishing_date", type=str, required=False)
+itandibb_args.add_argument("floor_option", type=str, required=False)
+itandibb_args.add_argument("trade_style", type=list, help="Trade Style is required", required=False)
+itandibb_args.add_argument('trade_style', action='append')
+itandibb_args.add_argument("bldg_structure", type=list, help="Building Structure is required", required=False)
+itandibb_args.add_argument('bldg_structure', action='append')
+itandibb_args.add_argument("other_fees", type=list, help="Other Fees is required", required=False)
+itandibb_args.add_argument('other_fees', action='append')
+itandibb_args.add_argument("browser_id", type=str, required=False)
+itandibb_args.add_argument("last_index", type=int, required=False)
+class ItandibbSearchProperty(Resource):
+  def post(self, scraping_type):
+    # Init Helper
+    helper = Itandibb()
+    if(scraping_type == 'search_property'):
+
+      # Set Browser
+      browser = None
+      # if(states['itandibb_browser'] == None):
+      browser = helper.new_browser(debug=False)
+      #   states['itandibb_browser'] = browser
+      # else:
+      #   browser = states['itandibb_browser']
+      # Login
+      # login_response = {'status' : 200} if states['itandibb_login'] is True else 
+      helper.login(browser)
+      # if(login_response['status'] == 200):
+      #   states['itandibb_login'] = True
+      args = itandibb_args.parse_args()
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['step_min'] = float(args['step_min']) if args['step_min'] != None else 0
+      args['step_max'] = float(args['step_max']) if args['step_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      args['year_build_min'] = float(args['year_build_min']) if args['year_build_min'] != None else 0
+      args['year_build_max'] = float(args['year_build_max']) if args['year_build_max'] != None else 0
+      args['from_station'] = float(args['from_station']) if args['from_station'] != None else 0
+        
+        #first_ten = args['first_ten'] if 'first_ten' in args else False
+
+        # return helper.search(browser, args, states['itandibb_login'], first_ten = True)
+      return helper.new_search(browser, args, states['itandibb_login'], args['first_ten'])
+        # return {
+        #   'message': 'Ready for Search.'
+        # }
+      # elif(login_response['status'] == 500):
+      #   return {
+      #     'message': 'Login Error. Please Check Login Key.'
+      #   }
+    elif(scraping_type == 'get_ptable'):
+      browser = helper.new_browser(debug=False)
+
+      # if(states['itandibb_browser'] == None):
+      detail_browser = helper.new_browser(debug=False)
+      helper.login(detail_browser)
+      args = itandibb_args.parse_args()
+      args['cities'] = ast.literal_eval(args['cities']) if args['cities'] is not None else None
+      args['fee_min'] = float(args['fee_min']) if args['fee_min'] != None else 0
+      args['fee_max'] = float(args['fee_max']) if args['fee_max'] != None else 0
+      args['step_min'] = float(args['step_min']) if args['step_min'] != None else 0
+      args['step_max'] = float(args['step_max']) if args['step_max'] != None else 0
+      args['area_min'] = float(args['area_min']) if args['area_min'] != None else 0
+      args['area_max'] = float(args['area_max']) if args['area_max'] != None else 0
+      args['year_build_min'] = float(args['year_build_min']) if args['year_build_min'] != None else 0
+      args['year_build_max'] = float(args['year_build_max']) if args['year_build_max'] != None else 0
+      args['from_station'] = float(args['from_station']) if args['from_station'] != None else 0
+      
+      states['itandibb_browser'][args['browser_id']] = browser
+      states['itandibb_browser']['detail_'+args['browser_id']] = detail_browser
+      
+      # try:
+      return helper.loginAndSearch(browser, args)
+      # except:
+      #   return {
+      #     'message': 'Login Search Error.'
+      #   }
+    elif(scraping_type == 'get_batch'):
+      args = itandibb_args.parse_args()
+      browser = states['itandibb_browser'][args['browser_id']]
+      detail_browser = states['itandibb_browser']['detail_'+args['browser_id']]
+      return helper.getByBatch(browser, args['last_index'], detail_browser)
+
+
+api.add_resource(TokyuSearchProperty, "/api/tokyu/<search_or_batch>")
+api.add_resource(MitsuiSearchProperty, "/api/mitsui/<search_or_batch>")
+api.add_resource(SumitomoSearchProperty, "/api/sumitomo/search_property")
+api.add_resource(ReinsSearchProperty, "/api/reins/search_property")
+api.add_resource(AtbbSearchProperty, "/api/atbb/search_property")
+api.add_resource(ItandibbSearchProperty, "/api/itandibb/<scraping_type>")
+
+
+if __name__ == "__main__":
+  app.run(host='0.0.0.0', port=80, debug=True)
+# serve(app, host='0.0.0.0', port=80, threads = 1)

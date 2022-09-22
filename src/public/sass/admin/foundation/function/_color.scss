@@ -1,0 +1,13 @@
+/* ! ==================================================
+Color
+================================================== */
+@function color($key) {
+  @return #{map-get($color, $key)}
+}
+.c-background {
+  @each $key,$val in $color {
+    &--#{$key} {
+      background: color($key);
+    }
+  }
+}

@@ -1,0 +1,8 @@
+
+.act-cat{
+
+    input:checked ~ label {
+        background: #003a16;
+        color: #ffffff;
+    }
+}

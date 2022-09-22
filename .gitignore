@@ -1,0 +1,6 @@
+/.idea
+/docker/db/mysql/volumes
+/docker/web/nginx/volumes
+/docker/web/nginx/*.pem
+/docker/redis/data/*
+.env

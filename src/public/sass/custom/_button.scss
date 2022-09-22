@@ -1,0 +1,28 @@
+.c-btn-blue {
+    min-width: 0;
+    padding: 7px 4px;
+    border-radius: 28px;
+    width: 50%;
+    color: #fff;
+    background: #128374;
+    border: solid 2px #128374;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Noto Sans NOTO SANS JP;
+    margin-top: 10px;
+
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        right: 12px;
+        width: 6px;
+        height: 10.8px;
+        pointer-events: none;
+        background: url(../../image/icon/arrow_white.svg);
+        background-size: contain !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        top: 14px;
+    }
+}

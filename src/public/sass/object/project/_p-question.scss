@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+/* ! --------------------------------------------------
+
+- 質問
+
+-------------------------------------------------- */
+.p-question {
+  .img{
+    opacity: 0.8;
+  }
+  .c-textarea{
+    margin: 4px 0 0;
+    .question{
+      height: 75px;
+      font-weight: 600;
+      // background: #E9EEF7;
+      // border: 2px solid #1d4e90;
+      // background: #69B3F3;
+      background: rgb(17 110 230 / 50%);
+      border: none;
+      padding: 7px;
+      // border-radius: 4px;
+      // padding: 10px;
+      resize: none;
+      width: 100%;
+      // background-image: url(/image/img/Questq.png);
+      // background-repeat: no-repeat;
+      // background-position: center center;
+      // background-size: 12% 90px;
+      color: #fff;
+      &:before{
+        content: "Q";
+        position: absolute;
+        color: #fff;
+        font: 600 60px/1em "Roboto", sans-serif;
+        top: 50%;
+        left: 50%;
+      }
+    }
+	}
+	.image{
+		height: 35px;
+    margin: 15px -14px 0 -14px;
+    background: url(/image/img/countdown.png) no-repeat center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+	}
+	.q-image{
+    // width: 60%;
+		// margin: 0 0 12px;
+		display: flex;
+		justify-content: center;
+		height: 100%;
+		// margin: 0 auto;
+    margin: 6px auto 0;
+		padding: 0 0 6px;
+		img{
+      // height: 170px;
+			border-radius: 4px;
+			background-size: contain;
+			background-size: cover;
+			background-repeat: no-repeat;
+			&:before{
+				content: "";
+		    display: block;
+		    width: 100%;
+		    padding-top: 50%;
+			}
+		}
+	}
+  .timeWatch{
+    display: flex;
+    justify-content: center;
+    // background: #000;
+    background: url(/image/img/timer.jpg) no-repeat center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 6px 6px;
+    // margin: 12px -12px;
+    // padding: 6px 0px 6px 0px;
+    // margin: 12px 6px;
+    // padding: 4px 0;
+    &:before{
+      content: "";
+      display: block;
+      // width: 100%;
+      padding-top: 28px;
+      @include mq(spSecond){
+        padding-top: 7%;
+      } 
+    }
+
+    .progressWrapper{
+
+    }
+    .time{
+      margin: 0 0 0 12px;
+      .count{
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+  }
+}

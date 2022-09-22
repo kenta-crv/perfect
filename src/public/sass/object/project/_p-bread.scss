@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- ぱんクズ
+
+-------------------------------------------------- */
+.p-bread{
+  background-color: color(background);
+  padding: 5px 0;
+  &__list{
+	  display: flex;
+	  align-items: center;
+	  > li {
+		  +li{
+			  padding-left: 30px;
+				position: relative;
+				&:before{
+					content: "";
+			    display: block;
+			    width: 12px;
+			    height: 12px;
+			    background: url(../image/icon/prev_white.svg);
+			    background-size: contain !important;
+			    background-position: center center !important;
+			    background-repeat: no-repeat !important;
+			    position: absolute;
+			    top: 50%;
+					left: 10px;
+					transform: translateY(-50%);
+				}
+		  }
+		  a{
+			  @extend %c-text__sub;
+			  color: color("title_white");
+			  font-family: 'Roboto',sans-serif;
+			  display: block;
+		  }	  
+	  }
+  }
+}

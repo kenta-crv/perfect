@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="グループ_15353" data-name="グループ 15353" transform="translate(-8508 -3153)">
+    <rect id="長方形_15360" data-name="長方形 15360" width="25" height="25" transform="translate(8508 3153)" fill="#fff" opacity="0"/>
+    <g id="calendar_today-24px_1_" data-name="calendar_today-24px (1)" transform="translate(8513.391 3158.391)">
+      <path id="パス_108" data-name="パス 108" d="M0,0H14.218V14.218H0Z" fill="none"/>
+      <path id="パス_109" data-name="パス 109" d="M12.663,2.185h-.592V1H10.886V2.185H4.962V1H3.777V2.185H3.185A1.188,1.188,0,0,0,2,3.37v9.479a1.188,1.188,0,0,0,1.185,1.185h9.479a1.188,1.188,0,0,0,1.185-1.185V3.37A1.188,1.188,0,0,0,12.663,2.185Zm0,10.663H3.185v-7.7h9.479Z" transform="translate(-0.815 -0.408)" fill="#1150a5"/>
+    </g>
+  </g>
+</svg>

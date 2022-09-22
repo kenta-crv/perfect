@@ -1,0 +1,84 @@
+%c-text,
+.c-text {
+  &__lv1 {
+    font-size: 48px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+  }
+  &__lv2 {
+    font-size: 32px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv3 {
+    font-size: 24px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+  }
+  &__lv4 {
+    font-size: 18px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv5 {
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv6 {
+    font-size: 13px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__lv7 {
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__bold {
+    font-weight: 500;
+  }
+  &__note {
+    color: color(second);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__unit {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0 2px;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--ellipsis {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &__color--accent {
+    color: color(accent);
+  }
+  &__weight--700 {
+    font-weight: 700;
+  }
+  &__weight--600 {
+    font-weight: 600;
+  }
+  &__weight--500 {
+    font-weight: 500;
+  }
+  &__weight--400 {
+    font-weight: 400;
+  }
+  &__weight--300 {
+    font-weight: 300;
+  }
+}

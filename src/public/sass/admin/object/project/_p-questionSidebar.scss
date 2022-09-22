@@ -1,0 +1,54 @@
+.p-questionSidebar{
+	&__category{
+		.cnt{
+			margin: 12px 0 0;
+			@extend %c-text__lv4;
+			@extend %c-text__weight--700;
+			background: color("black");
+			color: color("white");
+	    height: 45px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+		}
+	}
+	&__holding{
+		.cnt{
+			@extend %c-text__lv3;
+			@extend %c-text__weight--500;
+		}
+	}
+	&__people{
+		.cnt{
+			@extend %c-text__lv5;
+			@extend %c-text__weight--500;
+			strong{
+				@extend %c-text__lv3;
+				color: color("blue");
+			}
+			span{
+				@extend %c-text__lv4;
+			}
+		}
+	}
+	&__creating{
+		.cnt{
+			@extend %c-text__lv5;
+			@extend %c-text__weight--500;
+			strong{
+				@extend %c-text__lv3;
+				color: color("blue");
+			}
+			span{
+				@extend %c-text__lv4;
+			}
+		}
+	}
+	>li{
+		+li{
+			border-top: 1px solid #E5E6EA;
+			padding: 16px 0 0;
+			margin: 16px 0 0;
+		}
+	}
+}

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- ページング
+
+-------------------------------------------------- */
+.p-pagination{
+	&__list{
+  	display: flex;
+		align-items: center;
+		justify-content: center;
+		> li{
+			margin: 0 15px;
+		}
+		.p-pagination__control__button--prev{
+			background: url(../image/icon/prev.svg);
+			display: block;
+	    width: 32px;
+	    height: 32px;
+	    background-size: 16px 16px !important;
+	    background-position: center center !important;
+	    background-repeat: no-repeat !important;
+	    cursor: pointer;
+		}
+		.active{
+			background-color: color(background);
+			width: 40px;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			a{	
+				color: color("title_white");
+				@extend %c-text__lv4;
+				font-family: 'Roboto-Bold',sans-serif;
+			}
+		}
+		
+		.p-pagination__control__button--next{
+			background: url(../image/icon/next.svg);
+			display: block;
+	    width: 32px;
+	    height: 32px;
+	    background-size: 16px 16px !important;
+	    background-position: center center !important;
+	    background-repeat: no-repeat !important;
+	    cursor: pointer;
+		}					
+	}
+}

@@ -1,0 +1,306 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- インプット、セレクト
+
+================================================== */
+/* ! --------------------------------------------------
+
+- インプット
+
+-------------------------------------------------- */
+.c-input {
+  display:inline-flex;
+  position: relative;
+  $c-input: #{&};
+  //共通要素
+  %common {
+	  @extend %c-text__lv6;
+    height: 45px;
+    padding: 0 12px;
+    width: 100%;
+    border: 2px solid #1D4E90;
+		border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  &--file{
+    input{
+      display: none
+    }
+    label{
+      width: 100%;
+      min-height: 100px;
+      background: color("background");
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      border: solid 2px #1d4e90;
+      border-radius: 6px;
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(171, 173, 189, 0.7);
+      &:before{
+        content: '';
+		    width: 135px;
+		    height: 46px;
+		    display: block;
+		    background: url(/image/icon/icon_image.svg) no-repeat center;
+		    background-size: contain;
+		    opacity: .5;
+      }
+      &.add{
+        color: transparent;
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+  &--auto{
+	  flex: 1 1 auto;
+  }
+  &--heightTall{
+	  height: 35px;
+  }
+  &--icon{
+  }
+  // プレイスホルダー
+  /*
+	::-webkit-input-placeholder { color: map-get($colors,third);}
+  :-ms-input-placeholder { color: map-get($colors,third);}
+  ::-moz-placeholder { color: map-get($colors,third);}
+*/
+  // -- インプット search number file checkbox radio submit 
+  input {
+    @extend %common;
+  }
+  .textarea {
+    @extend %common;
+    overflow: auto;
+    padding: 8px 8px;
+    resize: none;
+    min-height: 64px;
+  }
+  .question{
+	  background: #E9EEF7;
+    border: 2px solid #1d4e90;
+    border-radius: 4px;
+    height: 170px;
+  }
+  //numberのスピンボタン非表示
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance:textfield;
+  }
+  &--full {
+    @extend #{$c-input};
+    width: 100%;
+    input,
+    textarea {
+      width: 100%;
+      font-weight: 400;
+    }
+  }
+  // -- セレクト
+  &--select {
+    @extend #{$c-input};
+    position: relative;
+    &:before {
+      content: "";
+	    width: 12px;
+	    height: 12px;
+	    background: url(../../image/icon/select.svg);
+	    background-size: contain !important;
+	    background-position: center center !important;
+	    background-repeat: no-repeat !important;
+	    position: absolute;
+	    top: 50%;
+	    right: 20px;
+	    transform: translateY(-50%);
+	    pointer-events: none;
+	    z-index: 1;
+    }
+    select {
+      @extend %common;
+      padding-right: 24px;
+      background: #fff;
+    }
+    select::-ms-expand {
+      display: none;
+    }
+  }
+  // -- チェックボックス・ラジオ共通項目
+  %commonInput {    
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  %commonBox {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../../image/icon/radio_no.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  %commonLabel {
+//     color: map-get($colors,form);
+    font-size: 14px;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px 0 20px;
+    position: relative; 
+  }
+  // -- チェックボックス
+  &--checkbox {
+    @extend #{$c-input};
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    &--column {
+      flex-direction: column;
+    }
+    input[type="checkbox"] {
+      @extend %commonInput;
+      &:checked + label {
+//         color: map-get($colors,form--high);
+        &:before {
+          background: url(../img/admin/p-input/checkbox--checked.svg);
+        }
+      }
+    }
+    label {
+      @extend %commonLabel;
+      &:before {
+        @extend %commonBox;
+        background: url(../img/admin/p-input/checkbox.svg);
+      }
+    }
+  }
+  // -- ラジオ
+  &--radio {
+    @extend #{$c-input};
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    input[type="radio"] {
+      @extend %commonInput;
+      &:checked + label {
+//         color: map-get($colors,form--high);
+        &:before {
+          background: url(../../image/icon/radio.svg);
+			    background-size: contain !important;
+			    background-position: center center !important;
+			    background-repeat: no-repeat !important;
+			    content: "";
+			    display: block;
+			    width: 20px;
+			    height: 20px;
+			    position: absolute;
+			    top: 50%;
+			    left: -4px;
+			    transform: translateY(-50%);
+        }
+      }
+    }
+    label {
+      @extend %commonLabel;
+      &:before {
+        @extend %commonBox;
+//         background: #ccc;
+      }
+    }
+  }
+}
+
+
+#thumbnail {
+  height: 100px;
+  max-width: 100px;
+  margin: 10px;
+  border: solid thin lightgray;
+  border-radius: 5px;
+}
+/*
+.c-wrap {
+	&__img{
+		display: block;
+    width: 120px;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    input{
+	    opacity: 0;
+	    pointer-events: none;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: -1;
+    }
+    &:before{
+	    content: "";
+	    display: block;
+	    height: auto;
+	    padding-top: 100%;
+	    background-size: 35px 35px !important;
+	    border: 1px solid #AAA;
+	    border-radius: 5px;
+    }
+	}
+}
+
+
+// -- カラー
+::placeholder {
+  color: #DBDBDB;
+  
+}
+
+
+
+/* ! --------------------------------------------------
+
+- セレクト
+
+-------------------------------------------------- */
+.c-parts{
+	flex: auto;
+  min-width: 10px;
+  padding: 2px
+}
+.c-none{
+	flex: none;
+}
+
+.c-select{
+	width: 100%;
+  position: relative;
+	&__form {
+		height: 33px;
+		border: 1px solid #222A36;
+		width:90px;
+	}
+}

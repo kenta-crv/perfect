@@ -1,0 +1,61 @@
+@charset "UTF-8";
+body{
+    input,select{
+        color:#333;
+    }
+    .l-frame{
+        .c-input{
+            &--file{
+                label{
+                    background:none;
+                    &:after{
+                        background: url(/image/icon/icon_image.svg) no-repeat center;
+                        background-size: cover;
+                    }
+                }
+            }
+            &--radio{
+                border:none;
+                border-radius: 0;
+                padding: 0;
+                input{
+                    +label{
+                        width:100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        word-break: break-all;
+                        height: 40px;
+                        padding: 0 12px 0 28px;
+                        border: 1px solid #4A4A4A;
+                        border-radius: 3px;
+                        &:before{
+                            left: 2px;
+                        }
+                    }
+                }
+                input[type=radio]{
+                    &:checked{
+                        + label{
+                            &:before{
+                                left: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.with-border{
+                input{
+                    +label{
+                        border: 2px solid #1D4E90;
+                        border-radius: 4px;
+                        padding-left: 10px;
+                        width: 100%;
+                    }
+                }
+                border:none;
+                border-radius: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}

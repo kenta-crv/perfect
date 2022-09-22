@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="グループ_15355" data-name="グループ 15355" transform="translate(-8580 -3153)">
+    <g id="グループ_15354" data-name="グループ 15354" transform="translate(72)" opacity="0">
+      <rect id="長方形_15360" data-name="長方形 15360" width="25" height="25" transform="translate(8508 3153)" fill="#fff" opacity="0.236"/>
+    </g>
+    <g id="clock_1_" data-name="clock (1)" transform="translate(8585.082 3158.082)">
+      <g id="グループ_15108" data-name="グループ 15108" transform="translate(6.843 3.442)">
+        <g id="グループ_15107" data-name="グループ 15107">
+          <path id="パス_5442" data-name="パス 5442" d="M239.387,124.065l-2.069-1.551v-3.16a.575.575,0,1,0-1.149,0V122.8a.573.573,0,0,0,.23.46l2.3,1.724a.575.575,0,0,0,.69-.919Z" transform="translate(-236.169 -118.779)" fill="#1150a5" stroke="#1150a5" stroke-width="0.2"/>
+        </g>
+      </g>
+      <g id="グループ_15110" data-name="グループ 15110">
+        <g id="グループ_15109" data-name="グループ 15109">
+          <path id="パス_5443" data-name="パス 5443" d="M7.418,0a7.418,7.418,0,1,0,7.418,7.418A7.426,7.426,0,0,0,7.418,0Zm0,13.687a6.269,6.269,0,1,1,6.269-6.269A6.276,6.276,0,0,1,7.418,13.687Z" fill="#1150a5" stroke="#1150a5" stroke-width="0.2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

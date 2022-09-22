@@ -1,0 +1,750 @@
+.container_search{
+    display: flex;
+    justify-content: center;
+}
+
+.container_search_adjust{
+    width: 100%;
+    height: auto;
+    color: #003a16;
+    font-size: 14px;
+}
+.container_ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    float: right;
+}
+.container_text{
+    margin-right: 15px;
+}
+
+.search_line{
+    margin-top: 15px;
+    border-bottom: 3px solid #003a16;
+}
+
+/* ----------------------First Line----------------------------- */
+.container_rain_ul{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+
+}
+.container_button1{
+    display: flex;
+    align-items: center;
+    height: 31px;
+    width: 100px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #003a16;
+    border-radius: 25px;
+}
+.container_button2{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 31px;
+    width: 70px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #003a16;
+    border-radius: 25px;
+}
+.container_button3{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 31px;
+    width: 100px;
+    font-size: 12px;
+    color: #003a16;
+    border-radius: 25px;
+    border: 2px solid #003a16;
+
+}
+.container_button4{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 31px;
+    width: 100px;
+    font-size: 12px;
+    color: #003a16;
+    border-radius: 25px;
+    border: 2px solid #003a16;
+}
+
+
+.container_rain_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_distribution{
+    display: flex;
+    justify-content: center;
+}
+.container_distribution_container{
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.first_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+    margin-top: 30px;
+}
+/* -------------------Before Dotted Line-------------------------------- */
+.container_lifeline_ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+
+}
+.container_lifeline_adjust{
+    display: flex;
+    justify-content: center;
+}
+input[type="checkbox"] {
+    border-radius: 3px;
+    /* margin-left: 30px; */
+    width: 24px !important;
+    height: 24px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: 1px solid gray;
+    box-shadow: none;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 1em;
+    background: #fff;
+    border-color: #a8a8a8;
+}
+input[type="checkbox"]:before {
+    content: '';
+    display: block;
+}
+
+input[type="checkbox"]:checked:before {
+    width: 9px;
+    height: 19px;
+    margin: 0px 8px;
+    border-bottom: 4px solid #FF6161;
+    border-right: 4px solid #FF6161;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+}
+input[type='checkbox']{
+    cursor: pointer;
+}
+
+form label{
+    margin-left: 5px;
+}
+
+.second_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+/* --------------------------------------------------- */
+/* -------------------third Dotted Lines-------------------------------- */
+
+.third_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+.container_kitchen_center{
+    position: relative;
+    display: flex;
+    margin-left: 85px;
+}
+
+.container_kitchen_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+}
+
+.container_kitchen_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_kitchen_line2{
+    display: flex;
+    justify-content: center;
+}
+.container_kitchen_line2_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+}
+
+.container_kitchen_line3{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.container_kitchen_line3_ul{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+}
+
+
+
+/* --------------------------------------------------- */
+
+/* -----------------BATH TOILET---------------------------------- */
+.fourth_dotted_line{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+.container_bath_toilet_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_bath_toilet_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+}
+
+.container_bath_toilet_adjust2{
+    display: flex;
+    justify-content: center;
+}
+.container_bath_toilet_ul2{
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+}
+
+/* --------------------------------------------------- */
+/* -------------------Fifth Dotted Lines-------------------------------- */
+.container_airconditioner_adjust{
+    display: flex;
+    justify-content: center;
+}
+.container_airconditioner_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+.fifth_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+/* --------------------------------------------------- */
+/* -------------------SECURITY-------------------------------- */
+.container_security_adjust{
+    display: flex;
+    justify-content: center;
+}
+.container_security_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.sixth_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+/* --------------------------------------------------- */
+/* -------------------STORAGE-------------------------------- */
+
+.container_storage_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_storage_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.seventh_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+/* --------------------------------------------------- */
+/* -------------------Comfortable Environment-------------------------------- */
+
+.container_comfortable_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_comfortable_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    /* margin-bottom: 20px; */
+
+}
+
+.container_comfortable_adjust2{
+    display: flex;
+    justify-content: center;
+}
+
+.container_comfortable_ul2{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.container_comfortable_adjust3{
+    display: flex;
+    justify-content: center;
+}
+
+.container_comfortable_ul3{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+
+.eigth_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+/* --------------------------------------------------- */
+/* --------------------Building Equipment------------------------------- */
+
+.container_building_equip_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_building_equip_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    /* margin-bottom: 20px; */
+}
+
+.container_building_equip_adjust2{
+    display: flex;
+    justify-content: center;
+}
+
+.container_building_equip_ul2{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.container_building_equip_adjust3{
+    display: flex;
+    justify-content: center;
+}
+
+.container_building_equip_ul3{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.nineth_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+/* --------------------------------------------------- */
+
+/* --------------------OTHERS------------------------------- */
+
+.container_others_adjust{
+    display: flex;
+    justify-content: center;
+}
+
+.container_others_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+
+.tenth_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+/* --------------------------------------------------- */
+
+/* ----------------------CONDITIONS----------------------------- */
+
+
+.container_condition_adjust{
+    display: flex;
+    justify-content: center;
+}
+.container_condition_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    /* margin-bottom: 20px; */
+}
+
+.container_condition_adjust2{
+    display: flex;
+    justify-content: center;
+}
+.container_condition_ul2{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+}
+
+.container_condition_adjust3{
+    display: flex;
+    justify-content: center;
+}
+
+.container_condition_ul3{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.eleveth_dotted_lines{
+    border: none;
+    border-top: 3px dotted #72777c;
+    color: #fff;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+/* --------------------------------------------------- */
+/* ---------------------ADVERTISING------------------------------ */
+.container_advertising_adjust{
+    display: flex;
+    justify-content: center;
+}
+.container_advertising_ul{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+    float: right;
+    margin-bottom: 20px;
+}
+
+/* input[type=text], input[type=password],  select {
+    margin: 10px;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+} */
+
+
+/* --------------------------------------------------- */
+/* ---------------------EXECUTE------------------------------ */
+.container_execute{
+    display: flex;
+    justify-content: center;
+}
+.container_execute_adjust{
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 61px;
+    width: 511px;
+    font-size: 12px;
+    color: #003a16;
+    border-radius: 30px;
+    border: 2px solid #003a16;
+}
+.center_pp{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+/* --------------------------------------------------- */
+/* -----------------DIV CENTER LINED---------------------------------- */
+.container_lifeline_center{
+    display: flex;
+    margin-left: 90px;
+}
+
+.container_kitchen_line2_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+.container_kitchen_line3_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+.container_bath_toilet_center{
+    display: flex;
+    margin-left: 64px;
+}
+
+.container_bath_toilet_adjust2_center{
+    display: flex;
+    margin-left: 86px;
+}
+
+.container_airconditioner_center{
+    display: flex;
+    margin-left: 94px;
+}
+
+.container_security_center{
+    display: flex;
+    margin-left: 59px;
+}
+
+.container_storage_center{
+    display: flex;
+    margin-left: 110px;
+}
+
+.container_comfortable_center{
+    display: flex;
+    margin-left: 77px;
+}
+
+.container_comfortable_adjust2_center{
+    display: flex;
+    margin-left: 140px;
+}
+.container_comfortable_adjust3_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+.container_building_equip_center{
+    display: flex;
+    margin-left: 76px;
+}
+
+
+.container_building_equip_adjust2_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+.container_building_equip_adjust3_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+
+.container_others_center{
+    display: flex;
+    margin-left: 93px;
+}
+
+.container_condition_center{
+    display: flex;
+    margin-left: 108px;
+}
+
+
+.container_condition_adjust2_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+
+.container_condition_ul3_center{
+    display: flex;
+    margin-left: 140px;
+}
+
+.container_advertising_center{
+    display: flex;
+    margin-left: 79px;
+}
+
+.alltext_adjust_center{
+    display: flex;
+    margin-left: 60px;
+}
+/* --------------------------------------------------- */
+/* ---------------------Modified Exclamations------------------------------ */
+
+/* --------------------------------------------------- */
+
+/* -----------------Notification Bubble---------------------------------- */
+.container_execute_adjust .badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 25px;
+    height: 25px;
+    background: #ff6161;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transform: rotate(-9deg);
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 260px;
+    border: 1px solid #707070;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -25px;
+    left: 102%;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #707070 transparent transparent;
+}
+
+
+
+.tooltip:hover .container_kitchen_tooltiptext {
+    visibility: visible;
+}
+
+.tooltip .container_kitchen_tooltiptext {
+    visibility: hidden;
+    width: 260px;
+    border: 1px solid #707070;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    left: 102%;
+}
+
+.tooltip .container_kitchen_tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #707070 transparent transparent;
+}
+
+.checkbox_width {
+    width: 234px;
+}
+
+
+/* --------------------------------------------------- */

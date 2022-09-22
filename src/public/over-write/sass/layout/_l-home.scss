@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.l-body{
+  .l-home{
+    .p-home__slider{
+      .p-slider__list{
+        margin:0;
+      }
+    }
+    .p-officialQuiz{
+      &__list{
+        >li{
+          .header__banner{
+            flex:inherit;
+            margin:0;
+            padding: 4px 2px 2px;
+          }
+          .p-officialQuiz__list__head__image{
+            border: none;
+            border-bottom:1px solid #001e47;
+          }
+        }
+      }
+    }
+    .p-home__quiz__buttonArea{
+      padding: 32px 0;
+    }
+  }
+}

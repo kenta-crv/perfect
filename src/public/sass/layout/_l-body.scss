@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ボディ
+
+================================================== */
+/* ! --------------------------------------------------
+
+- ボディ
+
+-------------------------------------------------- */
+.l-body {
+  min-height: 750px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  max-width: 480px;
+  font-family: "Helvetica Neue",
+  "Segoe UI",
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  Meiryo,
+  sans-serif;
+  //センター見せる用
+  margin: 0 auto;
+  &--quiz{
+	  // background: color("background");
+        // background: #ffeded;
+    background: url(../image/img/quiz_background.jpg);
+  }
+}

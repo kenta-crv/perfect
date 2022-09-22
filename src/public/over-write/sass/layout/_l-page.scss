@@ -1,0 +1,155 @@
+@charset "UTF-8";
+.l-body{
+  .container-table{
+    margin: 0;
+    width: 100%;
+    max-width: inherit;
+    tr{
+      margin:0;
+      padding: 0;
+      td, th{
+        padding:8px 4px;
+        p{
+          color: #333;
+          letter-spacing: 0;
+        }
+        .c-text__lv4{
+          font-size: 15px;
+          font-weight: 600;
+        }
+        .c-text__lv6{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .container-box{
+    .container-body{
+      padding:36px 12px;
+      margin:24px 12px;
+      .header-success{
+        margin:16px 0;
+      }
+      .p-list{
+        >.li-list__data{
+          position:relative;
+        }
+      }
+    }
+  }
+  // プロフィール
+  .p-profile{
+    .p-title__header{
+      padding-top: 0;
+      margin-top: 0;
+      .avatar_header{
+        border-radius: 50%;
+        position:absolute;
+        top:32px;
+        left:50%;
+        transform:translate(-50%,0);
+        border:2px solid #3492B4;
+        z-index: 1;
+        img{
+          border-radius: inherit;
+          position:static;
+          top:inherit;
+          left:inherit;
+          border: none;
+          z-index: 0;
+        }
+      }
+    }
+  }
+  // みんなのクイズ
+  .p-home__everyOne{
+    &__body{
+      background:none;
+      padding: 8px 0;
+      border:none;
+    }
+  }
+  // クイズ作成の入力リスト
+  .p-formList{
+    .p-formList__item--required{
+      &:before{
+        content: '＊';
+        font-size:9px;
+      }
+    }
+    &__item{
+      .p-formList__item__body{
+        .l-12--gap8{
+          // flex-direction:column;
+          &.p-upper{
+            flex-direction:row;
+          }
+        }
+        .p-label{
+          padding-bottom:0;
+          text-align: left;
+          p{
+            font-size: 12px;
+            font-weight: 500;
+            border-bottom:1px solid #769ccf;
+            padding: 2px;
+          }
+        }
+        .p-data{
+          padding-top:0;
+          p{
+            font-size: 16px;
+            padding: 2px;
+          }
+        }
+        .c-text__unit{
+          margin-left: 4px;
+          display: flex;
+          align-items:flex-end;
+        }
+      }
+      .container-footer{
+        margin:35px 0;
+        .c-button--full{
+          margin:0;
+        }
+      }
+      &.c-vanish__2{
+        flex-direction: column;
+      }
+    }
+  }
+  .quiz_list{
+    padding:0 12px 32px;
+    .p-list{
+      >li{
+        margin:0;
+        +li{
+          border-top: 1px solid rgb(20, 42, 95);
+        }
+        .li-numbers{
+          letter-spacing: 0.05em;
+        }
+        .li-numbers--sign{
+          font-size: 16px;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+  // クイズ作成の保存とか編集とかのボタン
+  .quizCreation{
+    margin: 0 12px 32px;
+    .c-input--file--quiz{
+      width: 100%;
+      label{
+        &:after{
+          content: none;
+        }
+      }
+    }
+    .c-button--full{
+      margin:0;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+
+$base_size: 5px;
+$base_font-weight: 200;
+$base-width: 150px;
+$min-hgt: 44px;
+$per_width: 5%;
+$base_font_size: 10px;
+.dpl-flx{
+    display: inline-flex;
+}
+.wgt-full{
+    width: 100%;
+}
+
+.txt-alg-r{
+    text-align: right;
+}
+.txt-alg-l{
+    text-align: left;
+}
+.txt-alg-c{
+    text-align: center;
+}
+.mgn-r-auto{
+    margin-right: auto;
+}
+.mgn-center{
+    margin: 0 auto;
+}
+.mgn-ato{
+    margin: auto;
+}
+.mgn-l-ato{
+    margin-left: auto;
+}
+.mgn-r-ato{
+    margin-right: auto;
+}
+.min-wgt-sm{
+    min-width: 180px;
+}
+.min-wgt-md{
+    min-width: 230px;
+}
+.min-wgt-lg{
+    min-width: 350px;
+}
+@for $i from 1 through 20 {
+    .fnt-sz-#{$i}{
+        font-size: $base_font_size + $i;
+    }
+}
+@for $i from 1 through 20 {
+    .w-per-#{$i}{
+        width: $per_width * $i;
+    }
+}
+@for $i from 1 through 10 {
+
+    .min-hgt-#{$i}{
+        min-height: $min-hgt * $i;
+    }
+
+    .min-wgt-#{$i}{
+        min-width: $base-width * $i;
+    }
+
+    .wgt-#{$i}{
+        width: $base-width * $i;
+    }
+
+    .hgt-#{$i}{
+        height: 125px * $i;
+    }
+}
+@for $i from 1 through 5 {
+    .fnt-wgt-#{$i}{
+        font-weight: $base_font-weight * $i;
+    }
+
+}
+@for $i from 1 through 20 {
+    .wdt-#{$i}{
+        width: $base-width * $i;
+    }
+}
+@for $i from 1 through 30 {
+
+    .pdg-#{$i} {
+        padding: $base_size * $i;
+    }
+
+    .pdg-l-#{$i} {
+        padding-left: $base_size * $i;
+    }
+
+    .pdg-r-#{$i} {
+        padding-right: $base_size * $i;
+    }
+
+    .pdg-b-#{$i} {
+        padding-bottom: $base_size * $i;
+    }
+
+    .pdg-t-#{$i} {
+        padding-top: $base_size * $i;
+    }
+
+    .mgn-#{$i} {
+        margin: $base_size * $i;
+    }
+
+    .mgn-l-#{$i} {
+        margin-left: $base_size * $i;
+    }
+
+    .mgn-r-#{$i} {
+        margin-right: $base_size * $i;
+    }
+
+    .mgn-b-#{$i} {
+        margin-bottom: $base_size * $i;
+    }
+
+    .mgn-t-#{$i} {
+        margin-top: $base_size * $i;
+    }
+
+}
+

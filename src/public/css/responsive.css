@@ -1,0 +1,206 @@
+#form2 {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  #form1 {
+    display: none;
+  }
+
+  #form2 {
+    display: block;
+    margin: 10px;
+  }
+
+  [class*=l-12__] {
+    width: 100%;
+  }
+
+  [class*=w-per-] {
+    width: 100%;
+  }
+
+  [class*=mgn-l-] {
+    margin-left: 0;
+  }
+
+  .banner-lbl-2 {
+    width: 100%;
+  }
+
+  .banner-box p {
+    font-size: 4.5vw;
+  }
+
+  .left-banner {
+    width: 40%;
+  }
+
+  .robot-box {
+    width: 100%;
+    z-index: -1;
+    margin-left: auto;
+  }
+
+  .l-12--gap24 > * {
+    padding: 5px;
+  }
+
+  .banner-box {
+    padding: 20px;
+  }
+
+  .bdr-tools:after {
+    border-left: none;
+  }
+
+  .box-pages.tools ul li {
+    width: 33.3333333333%;
+  }
+
+  .box-pages.tools {
+    width: 100%;
+    height: 200px;
+  }
+
+  .box-pages.tools ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .box-pages.tools li {
+    margin-left: 0px;
+    width: 33.3333333333%;
+    text-align: center;
+    box-shadow: 5px 10px 8px #eee;
+  }
+
+  .box-pages {
+    padding: 10px;
+  }
+
+  .box-pages.tools {
+    display: inherit;
+    box-shadow: none;
+  }
+
+  .tool-footer .margin-auto {
+    width: 100%;
+  }
+
+  .tool-footer a {
+    min-width: 100%;
+  }
+
+  .table_footer_description p {
+    font-size: 12px;
+  }
+
+  .l-12--gap24 {
+    margin: 0;
+  }
+
+  .inq-body {
+    padding: 10px;
+  }
+
+  .banner-lbl {
+    font-size: 40px;
+    width: 350px;
+  }
+
+  span.text-black {
+    font-size: 4vw;
+  }
+
+  .dpl-flx {
+    display: grid;
+  }
+
+  .fa-angle-right:before {
+    top: -25px;
+  }
+
+  .faq {
+    padding: 0;
+  }
+
+  .plan-disc p:first-child {
+    margin-bottom: 10px;
+  }
+
+  hr.hp-title-horizontal {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .img-bg-wave {
+    width: 100%;
+    left: -53px;
+    top: -177px;
+    transform: rotateZ(-5deg);
+  }
+
+  .box-pages.tools {
+    display: inline;
+  }
+
+  .box-pages.tools ul {
+    margin: 0px 20px 0px 20px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .banner-lbl {
+    font-size: 30px;
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .img-bg-wave {
+    height: 1135px;
+    width: 100%;
+    left: -173px;
+    top: -319px;
+    transform: rotate(-17deg);
+  }
+
+  .banner-lbl {
+    font-size: 25px;
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .banner-lbl {
+    font-size: 3.8vw;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  html {
+    width: 60vh;
+  }
+
+  .t-description {
+    font-size: 15px;
+  }
+
+  .img-bg-wave {
+    left: -8px;
+    transform: rotate(-1deg);
+    top: -262px;
+  }
+
+  .banner-lbl {
+    width: 150px;
+  }
+}
+

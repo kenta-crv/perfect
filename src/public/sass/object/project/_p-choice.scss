@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+/* ! --------------------------------------------------
+
+- 回答
+
+-------------------------------------------------- */
+.p-choice {
+	margin: 14px 0 0;
+	&--head{
+		text-align: center;
+		// border-bottom: 2px solid #1d4e90;
+		padding: 0 0 2px;
+		.img{
+			img{
+			  width: 72%;
+			}
+		}
+		.title{
+			@extend %c-text__lv5;
+			@extend %c-text__weight--600;
+		}
+	}
+	&--body{
+		margin: 12px 0 0;
+		position: relative;
+	}
+	&__list{
+		//画像回答
+		&--imageQuiz{
+			display: flex;
+			flex-wrap: wrap;
+			margin: -3px;
+			>li{
+				padding: 3px;
+				width: 50%;
+		    display: flex;
+		    flex-direction: column;
+		    button{
+				// border-radius: 4px;
+				// border: 2px solid #00DBB8;
+        // background: url(/image/img/frame.svg) no-repeat center center;
+        // background-size: cover;
+			  padding: 0;
+			  // border: 1px solid #C9C9C9;
+			  height: 100%;
+			  article{
+				.image{
+					border-radius: 2px;
+					background: color("background_white");
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					// border-radius: 3px;
+						img{
+						border-radius: 2px;
+						// height: 100px;
+						width: 100%;
+						max-width: 100%;
+						// object-fit: contain;
+						&:before{
+							content: "";
+							display: block;
+							width: 100%;
+							padding-top: 60%;
+						    }
+						}
+				    }
+			    }
+		    }
+		    .answer{
+				  position: relative;
+			    &:before{
+				    position: absolute;
+				    content: "選択済";
+				    color: color("text_white");
+				    @extend %c-text__lv5;
+					@extend %c-text__weight--600;
+					// border: 4px solid #1d4e90;
+					background-color: rgb(193 4 4 / 76%);
+				    // background-color: rgba(245, 128, 128, 0.67);
+				    width: 100%;
+				    height: 100%;
+				    top: 0;
+				    left: 0;
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+			    }
+		    }
+			}
+		}
+		//テキスト回答
+		&--text{
+			margin: -3px;
+			>li{
+				padding: 3px;
+				width: 100%;
+				+li{
+					margin: 4px 0 0;
+				}
+			button{
+        background: none;
+				border-radius: 3px;
+				padding: 0;
+				// border: 1px solid #1D4E90;
+				border: none;
+				height: 100%;
+				article{
+					// border-radius: 4px;
+					.matter{
+						// border-radius: 4px;
+						padding: 16px;
+						text-align: center;
+						background: color("background_blue");
+						&:hover{
+								opacity: 0.9;
+							}
+						.reply{
+							color: color("text_white");
+							@extend %c-text__lv6;
+							@extend %c-text__weight--600;
+						}
+					}
+					.text{
+						// border-radius: 4px;
+						// padding: 16px 0;
+						padding: 12px 0;
+						text-align: center;
+						border-radius: 3px;
+						background: url(/image/img/before_selection.jpg) no-repeat;
+						p{
+						color: color("text_white");
+						margin: 0 18px;
+						@extend %c-text__lv6;
+						@extend %c-text__weight--600;
+						// text-align: left;
+						}
+					}
+					.text-answer{
+						// border-radius: 4px;
+						padding: 12px 0;
+						text-align: center;
+							border-radius: 3px;
+							background: url(/image/img/choosing.svg) no-repeat;
+						p{
+						color: color("text_white");
+						@extend %c-text__lv6;
+						@extend %c-text__weight--600;
+						}
+					}
+				}
+		    }
+
+		  }
+		}
+		//丸罰回答
+		&--punishment{
+			display: flex;
+			flex-wrap: wrap;
+			margin: -3px;
+			>li{
+				padding: 3px;
+				width: 50%;
+		    display: flex;
+		    flex-direction: column;
+		    a{
+			  	article{
+				    border: 1px solid #ddd;
+				    padding: 20px;
+				    border-radius: 4px;
+				    .matter{
+					    text-align: center;
+					    .reply{
+						    @extend %c-text__lv1;
+					    }
+				    }
+		    	}
+			    .answer{
+				    position: relative;
+				    &:before{
+					    position: absolute;
+					    content: "選択済";
+					    color: color("text_white");
+					    @extend %c-text__lv5;
+							@extend %c-text__weight--600;
+					    border-radius: 4px;
+					    border: 4px solid #3492B4;
+					    background-color: rgba(0,   0,   0, 0.50);
+					    width: 100%;
+					    height: 100%;
+					    top: 0;
+					    left: 0;
+					    display: flex;
+					    align-items: center;
+					    justify-content: center;
+				    }
+			    }
+		    }
+			}
+		}
+	}
+	&--foot{
+		margin: 30px 0 0;
+		text-align: center;
+		.page{
+         color: color("text_white");
+			@extend %c-text__lv6;
+			@extend %c-text__weight--700;
+		}
+	}
+}

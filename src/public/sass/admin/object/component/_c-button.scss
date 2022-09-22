@@ -1,0 +1,82 @@
+.c-button {
+  min-width: 120px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  background: color(main);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  height: 30px;
+  padding: 0 16px;
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background: darken(map-get($color, main),16%);
+  }
+  &--accent {
+    background: color(accent);
+    border-color: color(accent);
+    &:hover {
+      background: darken(map-get($color, accent),8%);
+      border-color: darken(map-get($color, accent),8%);
+    }
+  }
+  &--sub {
+    background: color(sub);
+    border-color: color(sub);
+    &:hover {
+      background: darken(map-get($color, sub),8%);
+      border-color: darken(map-get($color, sub),8%);
+    }
+  }
+  &--large {
+    height: 48px;
+  }
+  &--small {
+    height: 28px;
+    min-width: 0;
+  }
+  &--full {
+    width: 100%;
+    min-width: 0;
+    padding: 0 4px;
+  }
+  &--medium {
+    min-width: 90px;
+  }
+  //color
+  &--red {
+    background: color("red");
+    &:hover {
+	    background: color("white");
+	    color: color("red");
+	    border: 1px solid #D32320;
+    }
+  }
+  &--gray {
+    background: color("gray");
+    &:hover {
+	    background: color("gray");
+	    cursor: not-allowed;
+/*
+	    background: color("white");
+	    color: color("black");
+	    border: 1px solid #D6D5D5;
+*/
+    }
+  }
+  &--black {
+    background: color("black");
+    &:hover {
+	    background: color("white");
+	    color: color("black");
+	    border: 1px solid #000;
+    }
+  }
+
+
+}

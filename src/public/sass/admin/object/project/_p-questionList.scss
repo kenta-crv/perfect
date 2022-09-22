@@ -1,0 +1,451 @@
+.p-questionList {
+	>li{
+		+li{
+			margin: 50px 0 0;
+			padding: 30px 0 0;
+		}
+	}
+	.regenerated{
+		border-left: 3px solid #ccc;
+    padding: 0 0 0 12px;
+	}
+	.playing{
+		border-left: 3px solid #D92220;
+    padding: 0 0 0 16px;
+    .p-questionList__part__head__title{
+	    span{
+		    color: color("red");
+	    }
+	    strong{
+		    color: color("red");
+	    }
+    }
+	}
+	&__part{
+		>li{
+		}
+		&__head{
+			&__title{
+				display: flex;
+				align-items: center;
+				@extend %c-text__lv4;
+				@extend %c-text__weight--500;
+				span{
+					@extend %c-text__lv4;
+					color: color("blue");
+					@extend %c-text__weight--700;
+				}
+				strong{
+					@extend %c-text__lv3;
+					margin: 0 5px 0 0;
+					color: color("deep--blue");
+					@extend %c-text__weight--700;
+				}				
+			}
+			&--playing{
+				// display: flex;
+				.p-buttonWrap{
+					margin: 0 0 0 auto;
+					align-items: center;
+					.time{
+						margin: 0 10px 0 0;
+						display: flex;
+						align-items: center;
+						@extend %c-text__lv3;
+						@extend %c-text__weight--600;
+						color: color("red");
+						&:before{
+							content: "";
+					    width: 20px;
+					    height: 20px;
+					    margin: 0 5px 0 0;
+					    background-size: contain !important;
+					    background-position: 50% !important;
+					    background-repeat: no-repeat !important;
+					    background: url(/image/icon/icon_clock.svg) no-repeat center center;
+						}
+					}
+				}
+			}
+		}
+		
+		&__body{
+			margin: 20px 0 0;
+		}
+		&__quest{
+			&__image{
+				img{
+					height: 100px;
+					max-width: 100%;
+					object-fit: contain;
+				}
+			}
+			&__text{
+				margin: 20px 0 0;
+			}
+			&__answer{
+				margin: 20px 0 0;
+				&__list{
+					//画像回答
+					&--image{
+						display: flex;
+						margin: -3px;
+						>li{
+							padding: 3px;
+							.c-image{
+								display: block;
+						    width: 100%;
+						    height: auto;
+						    background-size: cover !important;
+						    background-position: center center !important;
+						    background-repeat: no-repeat !important;
+								img{
+									height: 100px;
+							    max-width: 100%;
+							    object-fit: contain;
+								}
+								&:before{
+									padding-top: 0; 
+								}
+							}
+							.c-text{
+								text-align: center;
+								margin: 5px 0 0;
+								background: color("thin--blue");
+								.number{
+									@extend %c-text__lv7;
+									color: color("blue");
+									strong{
+										@extend %c-text__lv4;
+										@extend %c-text__weight--700;
+									}
+								}	
+							}
+							.answer{
+								background: color("blue");
+								.number{
+									color: color("white");
+								}
+							}
+              .c-only{
+								text-align: center;
+								margin: 5px 0 0;
+								background: color("alertBackground");
+								.number{
+									@extend %c-text__lv7;
+									color: color("red");
+									strong{
+										@extend %c-text__lv4;
+										@extend %c-text__weight--700;
+									}
+								}
+							}
+						}
+						.reply{
+							position: relative;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    position: absolute;
+						    top: 3px;
+						    left: 3px;
+							}
+/*
+							position: relative;
+							&:before{
+								position: absolute;
+						    content: "1";
+						    background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    top: 3px;
+						    left: 3px;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+							}
+*/
+						}
+						.second{
+							position: relative;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    position: absolute;
+						    top: 3px;
+						    left: 3px;
+							}
+/*
+							&:before{
+								position: absolute;
+						    content: "2";
+						    border: 1px solid #1781EB;
+						    background: color("white");
+						    color: color("blue");
+						    @extend %c-text__weight--600;
+						    top: 3px;
+						    left: 3px;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+							}
+*/
+						}
+						.third{
+							position: relative;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    position: absolute;
+						    top: 3px;
+						    left: 3px;
+							}
+/*
+							&:before{
+								position: absolute;
+						    content: "3";
+						    border: 1px solid #1781EB;
+						    background: color("white");
+						    color: color("blue");
+						    @extend %c-text__weight--600;
+						    top: 3px;
+						    left: 3px;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+							}
+*/
+						}
+						.fourth{
+							position: relative;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    position: absolute;
+						    top: 3px;
+						    left: 3px;
+							}
+/*
+							&:before{
+								position: absolute;
+						    content: "4";
+						    border: 1px solid #1781EB;
+						    background: color("white");
+						    color: color("blue");
+						    @extend %c-text__weight--600;
+						    top: 3px;
+						    left: 3px;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+							}
+*/
+						}
+					}	
+					//テキスト回答
+					&--text{
+						display: flex;
+				    flex-wrap: wrap;
+				    margin: -3px;
+						display: flex;
+						>li{
+							padding: 3px;
+					    width: 50%;
+					    display: flex;
+					    flex-direction: column;
+					    flex: 1 1 auto;
+					    .c-text{
+						    
+					    }
+					    .c-response{
+								text-align: center;
+								margin: 5px 0 0;
+								background: color("thin--blue");
+								.number{
+									@extend %c-text__lv7;
+									color: color("blue");
+									strong{
+										@extend %c-text__lv4;
+										@extend %c-text__weight--700;
+									}
+								}
+							}
+              .c-only{
+								text-align: center;
+								margin: 5px 0 0;
+								background: color("alertBackground");
+								.number{
+									@extend %c-text__lv7;
+									color: color("red");
+									strong{
+										@extend %c-text__lv4;
+										@extend %c-text__weight--700;
+									}
+								}
+							}
+						}
+						.reply{
+							flex: 1 1 auto;
+							display: flex;
+/*						
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+*/	
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+/*
+							&:before{
+						    content: "1";
+						    background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+*/
+						}
+						.second{
+							display: flex;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+/*
+							flex-direction: row;
+							align-items: center;
+							&:before{
+						    content: "2";
+						    border: 1px solid #1781EB;
+						    background: color("white");
+						    color: color("blue");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+*/
+						}
+						.third{
+							display: flex;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+/*
+							flex-direction: row;
+							align-items: center;
+							&:before{
+						    content: "3";
+						    border: 1px solid #1781EB;
+						    background: color("white");
+						    color: color("blue");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+*/
+						}
+						.fourth{
+							display: flex;
+							.suzi{
+								background: color("blue");
+						    color: color("white");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+/*
+							flex-direction: row;
+							align-items: center;
+							&:before{
+						    content: "4";
+						    border: 1px solid #1781EB;
+						    background: color("white");
+						    color: color("blue");
+						    @extend %c-text__weight--600;
+						    width: 18px;
+						    height: 18px;
+						    display: flex;
+						    align-items: center;
+						    justify-content: center;
+						    margin: 0 8px 0 0;
+							}
+*/
+						}
+					}
+				}
+			}
+		}		
+	}
+}

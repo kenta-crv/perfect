@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ボタン
+
+================================================== */
+/* ! --------------------------------------------------
+
+- ボタン
+
+-------------------------------------------------- */
+%c-text {
+	&__big {
+    color: color(title);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+  }
+  &__lv1 {
+    color: color(title);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+  }
+  &__lv2 {
+    color: color(title);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+
+  }
+  &__lv3 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.45833em;
+    letter-spacing: .13em;
+  }
+  &__lv4 {
+    color: color(title);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv5 {
+    $lv5: #{&};
+    color: color(title);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+    &--base {
+      @extend #{$lv5};
+      color: color(base);
+      font-weight: 400;
+    }
+  }
+  &__lv6 {
+    color: color(title_dark);
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: .04em;
+  }
+  &__lv7 {
+    color: color(title);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__lv8 {
+    color: color(title);
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__sub {
+    color: color(base);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__note {
+    color: color(second);
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__color--accent {
+    color: color(accent);
+  }
+  &__weight--700 {
+    font-weight: 700;
+  }
+  &__weight--600 {
+    font-weight: 600;
+  }
+  &__weight--500 {
+    font-weight: 500;
+  }
+  &__weight--400 {
+    font-weight: 400;
+  }
+  &__weight--300 {
+    font-weight: 300;
+  }
+  &--center {
+    text-align: center;
+  }
+  &__letter--none {
+    letter-spacing: 0;
+  }
+}

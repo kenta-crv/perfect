@@ -1,0 +1,9 @@
+.p-html {
+  background: #eee;
+  &--auth {
+    background: #000 url(../image/admin/auth/background.jpg);
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+}

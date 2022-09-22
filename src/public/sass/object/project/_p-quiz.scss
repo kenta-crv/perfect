@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+/* ! --------------------------------------------------
+
+- クイズ開始前
+
+-------------------------------------------------- */
+
+.p-quiz {
+	//注意ページ
+	&__check{
+	  //ヘッダー
+    &__head{
+      background: color("background_blue");
+      .title{
+        text-align: center;
+        padding: 8px 0;
+        p{
+          @extend %c-text__lv6;
+					@extend %c-text__weight--700;
+          color: color("text_white");
+        }
+      }
+    }
+    //ボディー
+    &__body{
+      margin: 0 0 36px;
+      padding: 20px 0 64px;
+      background: url(../image/img/quiz_background.jpg);
+      // min-height: 750px;
+      background-size: cover;
+      &__wall{
+        background: rgb(255 255 255 / 90%);
+        padding: 24px 16px 24px;
+        border-radius: 2px;
+        margin: 0 20px;
+        .text{
+          .quiz{
+            text-align: center;
+            margin: 0 0 12px;
+            @extend %c-text__lv6;
+					  @extend %c-text__weight--700;
+          }
+          .others{
+            text-align: center;
+            margin: 12px 0 12px;
+            @extend %c-text__lv6;
+					  @extend %c-text__weight--700;
+          }
+          p{
+            color: #303031;
+            @extend %c-text__weight--500;
+          }
+        }
+        .f-checkbox{
+          padding: 16px 0 0;
+          border-top: 1px solid #d8d8d8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 32px 0 0;
+          .name{
+            margin: 0 0 0 4px;
+            color: #1D4E90;
+            @extend %c-text__lv6;
+					  @extend %c-text__weight--700;
+          }
+        }
+      }
+    }
+	}
+	//開始前
+	&__officialQuiz{
+		//ヘッダー
+		&__head{
+			position: relative;
+			&--cnt{
+				display: flex;
+				justify-content: center;
+				padding: 10px 0;
+        background: #e23b3b;
+				// background: color("background_blue");
+				.number{
+					p{
+						color: color("text_white");
+						@extend %c-text__lv6;
+						@extend %c-text__weight--700;
+						strong{
+							@extend %c-text__lv5;
+							@extend %c-text__weight--700;
+						}
+					}
+				}
+			}
+			&__image{
+				display: flex;
+		    align-items: center;
+		    justify-content: center;
+				position: relative;
+				background: #000;
+				background-size: contain;
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    &:before{
+			    content: "";
+			    display: block;
+			    padding-top: 60%;
+		    }
+		    .text{
+			    @extend %c-text__lv6;
+			    @extend %c-text__weight--700;
+			    color: color("text_white");
+		    }
+			}
+		}
+
+		//ボディー
+		&__body{
+			margin: 20px 0 0;
+			.text{
+				.above{
+					.title{
+						@extend %c-text__lv5;
+						@extend %c-text__weight--700;
+						color: color("text_white");
+					}
+					.offer{
+						@extend %c-text__lv7;
+						color: color("text_gray");
+					}
+				}
+				.under{
+					margin: 12px 0 0;
+					.p-show__list{
+						>li{
+							+li{
+								margin: 5px 0 0;
+							}
+							article{
+								display: flex;
+						    flex-wrap: nowrap;
+						    width: 100%;
+						    align-items: flex-start;
+						    .title{
+							    flex: 0 0 70px;
+							    position: relative;
+							    p{
+									color: color("text_white");
+								    @extend %c-text__lv7;
+								    @extend %c-text__weight--700;
+								    // color: color("text_black");
+							    }
+						    }
+						    .cnt{
+							    p{
+									color: color("text_white");
+								    @extend %c-text__lv7;
+								    @extend %c-text__weight--600;
+								    // color: color("text");
+							    }
+						    }
+							}
+						}
+					}
+				}
+			}
+      .voice{
+        margin: 10px 0 0;
+        .title{
+          color: color("text_white");
+          margin: 0 0 10px;
+        }
+        .button{
+          margin: 4px 0 0;
+          .btn_play{
+            width: 32%;
+            cursor: pointer;
+            background: #ec5656;
+            color: #fff;
+            border: 1px solid #ec5656;
+            border-radius: 4px;
+            font-weight: 600;
+            height: 28px;
+            position: relative;
+			      span{
+              left: -8px;
+              top: -10px;
+              position: absolute;
+              padding: 0 10px;
+              font-size: 11px;
+              background: #fff;
+              color: #ff1300;
+              border-radius: 9px;
+            }
+          }
+          .btn_play_decision{
+            width: 32%;
+            cursor: pointer;
+            background: #FF0000;
+            color: #fff;
+            border: 1px solid #FF0000;
+            border-radius: 4px;
+            font-weight: 600;
+            height: 28px;
+            position: relative;
+          }
+          .btn_stop{
+            width: 32%;
+            cursor: pointer;
+            color: #FFF;
+            background: #b3b3b3;
+			      border: 1px solid #b3b3b3;
+            border-radius: 4px;
+            font-weight: 600;
+            height: 28px;
+          }
+          .btn_stop_decision{
+            width: 32%;
+            cursor: pointer;
+            color: #FFF;
+            background: #7b7979;
+			      border: 1px solid #7b7979;
+            border-radius: 4px;
+            font-weight: 600;
+            height: 28px;
+          }
+        }
+        .cnt{
+          margin: 8px 0 0;
+          p{
+            // color: #4a4a4a;
+            font-size: 12px;
+			      color: color("text_white");
+          }
+        }
+      }
+		}
+		&__time{
+			display: flex;
+			align-items: center;
+			margin: 8px 0 0;
+			.title{
+				@extend %c-text__lv7;
+				color: color("text");
+			}
+			.number{
+				@extend %c-text__lv7;
+				color: color("text_blue");
+				margin: 0 0 0 5px;
+				span{
+					@extend %c-text__lv6;
+					font-family: Roboto-Bold,sans-serif;
+				}
+			}
+			&__entry{
+				display: flex;
+				align-items: center;
+				margin: 0 12px 0 0;
+				.number{
+					@extend %c-text__lv7;
+					color: color("text_blue");
+					@extend %c-text__weight--700;
+					margin: 0 0 0 5px;
+					span{
+						@extend %c-text__lv6;
+						@extend %c-text__weight--700;
+					}
+				}
+			}
+			&__challenge{
+				display: flex;
+				align-items: center;
+				.number{
+					@extend %c-text__lv7;
+					@extend %c-text__weight--700;
+					color: color("text_blue");
+					margin: 0 0 0 5px;
+					span{
+						@extend %c-text__lv6;
+						@extend %c-text__weight--700;
+					}
+				}
+			}
+		}
+	}
+}

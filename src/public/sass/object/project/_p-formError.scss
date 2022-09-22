@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- フォームエラー
+
+-------------------------------------------------- */
+.p-formError {
+  margin: 3px 0;
+  width: 100%;
+  color: color("text_error");
+  border-radius: 2px;
+  .message {
+    text-align: center;
+    @extend %c-text__note;
+    @extend %c-text__weight--700;
+    color: color(error);
+    width: 100%;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      background: color(error);
+      width: 4px;
+      height: 4px;
+      border-radius: 100px;
+      position: absolute;
+      top: .68em;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    strong{
+      @extend %c-text__weight--700;
+      @extend %c-text__lv7;
+    }
+  }
+}

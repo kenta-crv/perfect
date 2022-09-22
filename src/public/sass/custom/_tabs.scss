@@ -1,0 +1,48 @@
+.c-main-box-tabs {
+    margin-top: 45px;
+
+    ul {
+        display: inline-flex;
+        height: 39px;
+        li{
+            float: left;
+            margin: 0;
+            cursor: pointer;
+            padding: 0px 21px;
+            height: 40px;
+            line-height: 31px;
+
+            overflow: hidden;
+            position: relative;
+        }
+        li.active {
+            background-color: #fff;
+            color: #333;
+             border-left: solid 1px #72777C;
+            border-right: solid 1px #72777C;
+            border-top: solid 1px #72777C;
+            background: #F9FAF2;
+            border-bottom: #F9FAF2;
+
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: block;
+            transition: background ease 0.5s;
+            transition-duration: .5s;
+        }
+        p{
+            padding-top: 5px;
+            cursor: pointer;
+        }
+    }
+    .result{
+        border: 1px solid #72777C;
+        border-radius: 5px;
+        clear: both;
+        overflow: auto;
+        background: #F9FAF2;
+        .result-tabs{
+            padding: 20px;
+        }
+    }
+}

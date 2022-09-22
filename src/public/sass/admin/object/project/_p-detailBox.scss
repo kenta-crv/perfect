@@ -1,0 +1,25 @@
+.p-detailBox {
+  width: 100%;
+  & + & {
+    margin-top: 40px;
+  }
+  &__head {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    border-left: 3px solid #ccc;
+    padding: 0 0 8px 16px;
+    margin: 0 0 24px;
+    &__title {
+      @extend %c-text__lv4;
+      @extend %c-text__bold;
+    }
+    &__action {
+      margin: 0 0 0 auto;
+    }
+  }
+  &__body {
+    
+  }
+}

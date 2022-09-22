@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ボタン
+- ボタンエリア
+
+================================================== */
+/* ! --------------------------------------------------
+
+- ボタン
+
+-------------------------------------------------- */
+.c-button {
+	@extend %c-text__lv6;
+	@extend %c-text__weight--700;
+	background: color("background_black");
+	color: color("text_white");
+	border-radius: 32px;
+	
+  border: 2px solid #fff;
+  cursor: pointer;
+  padding: 10px;
+  min-width: 200px;
+  width: auto;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+	  opacity: 0.6;
+  }
+  //フル
+  &--full {
+    width: 100%;
+  }
+  //icon
+  &--icon {
+	  &__arrow {
+		  position: relative;
+			&:before{
+			  content: "";
+		    display: block;
+		    position: absolute;
+		    right: 12px;
+		    width: 24px;
+		    height: 24px;
+		    background-size: contain;
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		    background: url(/image/icon/icon＿arrow.svg);
+	  	}
+	  }
+	  &__favorite {
+		  position: relative;
+		  padding-left: 20px;
+		  border: 1px solid #CB1F1F;
+		  color: color("text_black");
+		  background: color("background_white");
+			&:before{
+			  content: "";
+		    display: block;
+		    position: absolute;
+		    transform: translateY(-50%);
+		    left: 5px;
+		    top: 60%;
+		    width: 24px;
+		    height: 24px;
+		    background-repeat: no-repeat !important;
+		    background: url(/image/icon/icon_favorite.svg);
+	  	}
+	  }
+	  &__report {
+		  position: relative;
+		  padding-left: 20px;
+		  border: 1px solid #F0CC00;
+		  color: color("text_black");
+		  background: color("background_white");
+		  margin: 0 0 0 5px;
+			&:before{
+			  content: "";
+		    display: block;
+		    position: absolute;
+		    transform: translateY(-50%);
+		    left: 5px;
+		    top: 60%;
+		    width: 24px;
+		    height: 24px;
+		    background-repeat: no-repeat !important;
+		    background: url(/image/icon/icon_report.svg);
+	  	}
+	  }
+  }
+  //トップ探す限定
+  &--search{
+	  border: 1px solid #13203b;
+    margin: 0;
+    border-radius: 0 4px 4px 0;
+    @extend %c-text__lv5;
+    height: 50px;
+    min-width: 70px;
+    cursor: pointer;
+  }
+	//高さ
+  &--heightLarge {
+	  height: 50px;
+  }
+
+  //最新
+  //サイズ
+  &--small {
+	  @extend %c-text__lv7;
+		@extend %c-text__weight--600;
+	  height: 30px;
+	  min-width: 100px;
+  }
+  &--regular {
+	  @extend %c-text__lv6;
+		@extend %c-text__weight--600;
+	  height: 30px;
+	  min-width: 90px;
+  }
+
+
+  //radius
+  &--roundSmall {
+	  border-radius: 5px;
+  }
+  //height
+  &--heightregular {
+	  height: 45px;
+  }
+
+
+  //color
+  &--zero {
+	  background:none;
+	  border: none;
+  }
+  &--blue {
+	  color: color("text_white");
+	 	background: color("background_blue");
+	  border: 1px solid #1D4E90;
+  }
+  &--thinBlue {
+	  color: color("text_white");
+	 	background: color("background_thinBlue");
+	  border: 1px solid #3492B4;
+  }
+  &--gray {
+	  color: color("text_white");
+	 	background: color("background_gray");
+	  border: 1px solid #D6D5D5;
+  }
+
+  //bordercolor
+  &--thinBlueborder {
+	  color: color("text_thinBlue");
+	 	background: color("background_white");
+	  border: 1px solid #3492B4;
+  }
+  &--blueBorder {
+	  color: color("text_blue");
+	 	background: color("background_white");
+	  border: 1px solid #1D4E90;
+  }
+
+  //text
+  &--text {
+	  color: color("text_black");
+	  text-decoration: underline;
+	  @extend %c-text__lv8;
+	  @extend %c-text__weight--600;
+	  &:hover{
+	  	background:none;
+		  color: color("text_black");
+		  text-decoration: underline;
+		  @extend %c-text__lv8;
+  	}
+  }
+
+
+
+
+
+
+
+
+
+/*
+	//高さ
+  &--heightLarge {
+	  height: 50px;
+  }
+  &--heightSmail {
+	  height: 30px;
+  }
+  //横幅
+	&--widthLarge {
+	  padding: 0 50px;
+  }
+  &--widthSmail {
+	  min-width: 90px;
+  }
+   &--widthRegular {
+	  min-width: 130px;
+  }
+*/
+  //block
+  &--block {
+	  display: inline-block;
+  }
+  //blue
+/*
+  &--blue {
+	  color: color("text_white");
+	 	background: color("background_blue");
+	  border: 1px solid #1D4E90;
+	  @extend %c-text__weight--500;
+  }
+*/
+
+}
+.once_button{
+    width: 100%;
+    padding: 0;
+    border: 1px solid #1d4e90;
+    // border-radius: 5px;
+}
+
+

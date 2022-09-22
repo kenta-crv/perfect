@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="グループ_1648" data-name="グループ 1648" transform="translate(-1832 -7619)">
+    <rect id="長方形_1759" data-name="長方形 1759" width="24" height="24" transform="translate(1832 7619)" fill="#fff" opacity="0"/>
+    <g id="グループ_1644" data-name="グループ 1644" transform="translate(1222 7517)">
+      <g id="パス_854" data-name="パス 854" transform="translate(612 104)">
+        <path id="パス_6211" data-name="パス 6211" d="M10,19a9,9,0,1,1,9-9A9.01,9.01,0,0,1,10,19Z" fill="#fff"/>
+        <path id="パス_6212" data-name="パス 6212" d="M10,2a8,8,0,1,0,8,8,8.009,8.009,0,0,0-8-8m0-2A10,10,0,1,1,0,10,10,10,0,0,1,10,0Z" fill="#4A4A4A"/>
+      </g>
+      <path id="パス_855" data-name="パス 855" d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" transform="translate(617.042 109.042)" fill="#DF201F"/>
+    </g>
+  </g>
+</svg>

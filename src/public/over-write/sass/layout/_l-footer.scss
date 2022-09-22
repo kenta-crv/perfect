@@ -1,0 +1,16 @@
+@charset "UTF-8";
+.l-body{
+  footer{
+    .p-footer{
+      &__nav__list{
+        >li{
+          padding: 0;
+          margin:0;
+          a{
+            padding: 12px 0;
+          }
+        }
+      }
+    }
+  }
+}

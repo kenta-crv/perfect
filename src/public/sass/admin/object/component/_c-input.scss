@@ -1,0 +1,504 @@
+//共通要素
+%inputCommon {
+  font-size: 13px;
+  word-break: break-all;
+  height: 40px;
+  padding: 0 8px;
+  width: 100%;
+  border: 1px solid #4A4A4A;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &:disabled {      
+    color: color(second);
+    border-color: color(line);
+    background: color(background);
+    pointer-events: none;     
+  }
+}
+.c-input {
+  display:inline-flex;
+  position: relative;
+  %focus {    
+    border-color: color(form--high);
+    background: color(form--high) + 0a ;
+  }
+  // プレイスホルダー
+  ::-webkit-input-placeholder { color: color(third);}
+  :-ms-input-placeholder { color: color(third);}
+  ::-moz-placeholder { color: color(third);}
+  input {
+    @extend %inputCommon;
+    &:focus {
+      @extend %focus;    
+    }
+  }
+  textarea {
+    @extend %inputCommon;
+    padding: 5px 8px;
+    resize: none;
+    min-height: 120px;
+    border-radius: 3px;
+    resize: none;
+		border: 1px solid #ccc;
+		border-radius: 3px; 
+		resize: none; 
+		border: 1px solid #ccc;
+    &:focus {
+      @extend %focus;    
+    }
+    &[data-option="size-l"]{
+      min-height: 200px;
+    }
+  }
+  //numberのスピンボタン非表示
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance:textfield;
+  }
+  &--textarea {
+    textarea {
+      min-height: 240px !important;
+    }
+  }
+  &--keyword {
+    position: relative;
+    cursor: pointer;
+    &:before{
+	    content: "";
+	    display: block;
+	    width: 24px;
+	    height: 24px;
+	    background: url(../../image/icon/gray_keyword.svg);
+	    background-size: contain !important;
+	    background-position: center center !important;
+	    background-repeat: no-repeat !important;
+	    position: absolute;
+	    top: 50%;
+	    left: 6px;
+	    transform: translateY(-50%);
+	    z-index: 1;
+    }
+  }
+  &--select {
+    $minWidth: 120px; 
+    min-width: $minWidth;
+    &__iconSelect{
+	    position: relative;
+	    &:after {
+	      content: "";
+		    width: 25px;
+		    height: 25px;
+		    position: absolute;
+		    top: 50%;
+		    right: 10px;
+		    transform: translateY(-50%);
+		    pointer-events: none;
+		    background: url(../../image/icon/blue_select.svg);
+		    background-size: contain !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+    	}
+    }
+    &__iconTriangle {
+	    position: relative;
+	    &:after {
+	      content: "";
+		    width: 12px;
+		    height: 12px;
+		    position: absolute;
+		    top: 50%;
+		    right: 10px;
+		    transform: translateY(-50%);
+		    pointer-events: none;
+		    background: url(../../image/icon/triangle.svg);
+		    background-size: contain !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+    	}
+    }
+    &__iconCalendar{
+	    position: relative;
+	    &:after {
+	      content: "";
+		    width: 25px;
+		    height: 25px;
+		    position: absolute;
+		    top: 50%;
+		    right: 10px;
+		    transform: translateY(-50%);
+		    pointer-events: none;
+		    background: url(../../image/icon/blue_calendar.svg);
+		    background-size: contain !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+    	}
+    }
+    &__iconTime{
+	    position: relative;
+	    &:after {
+	      content: "";
+		    width: 25px;
+		    height: 25px;
+		    position: absolute;
+		    top: 50%;
+		    right: 10px;
+		    transform: translateY(-50%);
+		    pointer-events: none;
+		    background: url(../../image/icon/blue_time.svg);
+		    background-size: contain !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+    	}
+    }
+    select {
+      @extend %inputCommon;
+      padding-right: 24px;
+      min-width: $minWidth;
+      &:focus {
+        @extend %focus;    
+      }
+    }
+  }
+  // -- チェックボックス・ラジオ共通項目
+  %inputCommonInput {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  %inputCommonBox {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../../image/icon/radio_no.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+  }
+  %inputCommonLabel {
+    font-size: 13px;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 12px 0 20px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+  }
+  // -- チェックボックス
+  &--checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    &--column {
+      flex-direction: column;
+    }
+    &__group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      @extend %inputCommonInput;
+      &:checked + label {
+        color: color(form--high);
+        &:before {
+          background: url(../img/admin/p-input/checkbox--checked.svg);
+        }
+      }
+    }
+    label {
+      @extend %inputCommonLabel;
+      &:before {
+        @extend %inputCommonBox;
+        background: url(../img/admin/p-input/checkbox.svg);
+      }
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+    @at-root label.c-input {
+      &__approval {
+        border: 1px solid color(form);
+        padding: 0 24px 0 40px;
+        border-radius: 3px;
+        &:before {
+          left: 4px; 
+        }
+        :checked + & {
+          color: color(correct) !important;
+          border-color: color(correct);
+          background: color(correct) + 44;
+          &:before {
+            background: url(../img/admin/p-input/checkbox--correct.svg) !important;
+            background-size: contain !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+          }
+        }
+      }
+    }
+  }
+  // -- ラジオ
+  &--radio {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    word-break: break-all;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #4A4A4A;
+    border-radius: 3px;
+    &__group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    input[type="radio"] {
+      @extend %inputCommonInput;
+      &:checked + label {
+//         color: color(form--high);
+        position: relative;
+        &:before {
+          background: url(../../image/icon/radio.svg);
+          background-size: contain !important;
+			    background-position: center center !important;
+			    background-repeat: no-repeat !important;
+			    content: "";
+			    display: block;
+			    width: 20px;
+			    height: 20px;
+			    position: absolute;
+			    top: 50%;
+			    left: -4px;
+			    transform: translateY(-50%);
+        }
+      }
+    }
+    label {
+	     position: relative;
+      @extend %inputCommonLabel;
+      
+      &:before {
+        @extend %inputCommonBox;
+        content: "";
+		    display: block;
+		    width: 20px;
+		    height: 20px;
+		    background: url(../../image/icon/radio_no.svg);
+		    background-size: contain !important;
+		    background-position: center center !important;
+		    background-repeat: no-repeat !important;
+		    position: absolute;
+		    top: 50%;
+		    left: 0;
+		    transform: translateY(-50%);
+		    z-index: 1;
+      }
+      &:last-of-type {
+//         padding-right: 0;
+      }
+    }
+    //ラベルタイプに変更
+    &--label {
+      margin: -2px;
+      label {
+        margin: 2px;
+        border: 1px solid color(line);
+        border-radius: 2px;
+        padding-left: 24px;
+        cursor: pointer;
+        &:hover {
+          color: color(form--high);
+          border-color: color(form--high);
+        }
+        &:before {
+          left: 4px;
+          width: 16px;
+          height: 16px;
+          background: url(../img/admin/p-input/radio.svg);
+          background-size: contain !important;
+          background-position: center center !important;
+          background-repeat: no-repeat !important;
+        }
+        &:last-of-type {
+          padding-right: 12px;
+        }
+      }
+      input[type="radio"] {
+        &:checked + label {
+          color: #fff;
+          border-color: color(form--high);
+          background: color(form--high);
+          &:before {
+            background: url(../img/admin/p-input/radio--checked--white.svg);
+          }
+          //ラベルのデザインを変更
+          &.label--error {
+            border-color: color(error);
+            background: color(error);
+          }
+          &.label--correct {
+            border-color: color(correct);
+            background: color(correct);
+          }
+        }
+      }
+    }
+  }
+  // ファイルアップロード
+  &--file {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    input[type="file"]{
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    label {
+	    background: #ECEEEF;
+//       border: 1px solid color(formLine);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      height: 150px;
+      &:after {
+	      content: "";
+		    background-position: 50% !important;
+		    background-repeat: no-repeat !important;
+		    background: url(/image/img/img_upload.svg) no-repeat center center;
+//         content: "アップロード";
+        @extend %c-text__lv5;
+        font-size: 11px !important;
+        color: #fff !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 148px;
+//         background: color(form--high) + 77;
+        transition: all 0.2s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &:hover {
+        &:after {
+	        opacity: 0.7;
+//           background: color(form--high) + aa;
+        }
+      }
+    }
+    .c-image{
+      &:before {
+	      padding-top: 0;
+	    }
+    }
+    .c-button--remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+    //4分割
+    &--four{
+	    label {
+		    &:after {
+			    height: 98px;
+		    }
+	    }
+    }
+  }
+  // 日付
+  &--date,
+  &--time {
+    input[type="date"],
+    input[type="time"], {
+      width: 100px;
+      position: relative;
+      &::-webkit-calendar-picker-indicator {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+    }
+  }
+  //大きく
+  &--large {
+    input {    
+      font-size: 16px;
+    }
+  }
+  //単位
+  &--unit {
+    padding: 0 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  //エラ表示
+  &--error {
+    &:before {
+      color: color(error) !important;
+    }
+    input,
+    select,
+    textarea {
+      border-color: color(error);
+      &::-webkit-input-placeholder { color: color(error) + aa;}
+      &:-ms-input-placeholder { color: color(error) !important;}
+      &::-moz-placeholder { color: color(error) !important;}
+
+    }
+  }
+  &--link {
+	  background: #ddd;
+	  border: 1px solid #ddd !important;
+	  &:hover{
+		  background: #ddd;
+			border: 1px solid #ddd !important;
+	  }
+  }
+  &--full {
+    width: 100%;
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
+  &--width160 {
+    min-width: 160px;
+  }
+}
+
+textarea {
+  @extend %inputCommon;
+  padding: 5px 8px;
+  resize: none;
+  min-height: 120px;
+	border-radius: 3px; 
+	resize: none; 
+	border: 1px solid #4A4A4A;  
+}
+
+[class*="unit_min"] {
+  flex: 0 0 3px;
+  padding: 0;
+}

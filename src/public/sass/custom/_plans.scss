@@ -1,0 +1,81 @@
+.plans {
+    overflow-x: auto;
+    margin: auto;
+    margin-top: 17px;
+    table {
+        border-collapse: separate;
+        border-spacing: 0;
+
+        th, td {
+            text-align: center;
+            border: solid 1px #EDEDED;
+        }
+        th {
+            min-width: 200px;
+        }
+        .box td{
+
+            height: 60px;
+        }
+        th.mid p, th.high p{
+            font-size: 20px !important;
+            padding-top: 15px;
+        }
+        .plan-header {
+            padding: 10px;
+            .high-2 {
+                color: #fff;
+                background-image: linear-gradient(to right, #2d73a1, #2b9690);
+            }
+            .mid-2 {
+                color: #fff;
+                background-image: linear-gradient(to right, #7FD43E, #3dc599);
+            }
+
+
+            .basic {
+                background: #D8D8D8;
+                text-align: center;
+            }
+            .basic, .mid-2, .high-2 {
+                width: 258px;
+                font-weight: 500;
+                height: 166px;
+                min-height: 40px;
+
+            }
+        }
+    }
+    tr:last-child {
+        box-shadow: 0 9px 5px -4px #eee;
+
+    }
+
+    table tr th:first-child,
+    table tr td:first-child {
+      border-left: 1px solid #EDEDED;
+    }
+    table tr th:first-child,
+    table tr td:first-child {
+      border-left: 1px solid #EDEDED;
+    }
+
+    table tr:first-child th:first-child {
+        border-top-left-radius: 10px;
+      }
+
+      /* top-right border-radius */
+      table tr:first-child th:last-child {
+        border-top-right-radius: 10px;
+      }
+
+      /* bottom-left border-radius */
+      table tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+      }
+
+      /* bottom-right border-radius */
+      table tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+      }
+}

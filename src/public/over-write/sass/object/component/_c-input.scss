@@ -1,0 +1,141 @@
+@charset "UTF-8";
+body{
+  textarea{
+    padding: 8px 12px;
+  }
+  .c-input{
+    input, textarea{
+      font-weight: 400;
+    }
+    &--file{
+      min-width:250px;
+        label{
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: #eee;
+          background-image: url(/image/common/img_noImage.svg);
+          width: 100%;
+          transition: all 0.2s ease;
+        &:after{
+          content: none;
+        }
+        img{
+          width:250px;
+        }
+      }
+    }
+    &--radio{
+        border:none;
+        border-radius: 0;
+        padding: 0;
+        input{
+            +label{
+                word-break: break-all;
+                height: 40px;
+                padding: 0 12px 0 28px;
+                &:before{
+                    left: 2px;
+                }
+            }
+        }
+        input[type=radio]{
+            &:checked{
+                + label{
+                    &:before{
+                        left: 2px;
+                    }
+                }
+            }
+        }
+    }
+    &.with-border{
+      input{
+        border:none;
+        border-radius: 0;
+        padding: 0;
+        +label{
+          border: 2px solid #1D4E90;
+          border-radius: 4px;
+          padding:4px 10px 4px 30px;
+          width: 100%;
+        }
+      }
+    }
+    // プレイスホルダー
+    ::-webkit-input-placeholder { color:#aaa;}
+    :-ms-input-placeholder { color:#aaa;}
+    ::-moz-placeholder { color:#aaa;}
+    textarea{
+      padding: 8px;
+    }
+    &--select {
+      $minWidth: 120px; 
+      min-width: $minWidth;
+      .c-input--select__iconSelect{
+        position: relative;
+        &:after {
+          content: "";
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          pointer-events: none;
+          background: url(../../image/icon/blue_select.svg) no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+    &--select__iconTriangle {
+      position: relative;
+      &:after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        background: url(../../image/icon/triangle.svg) no-repeat center;
+        background-size: contain;
+      }
+    }
+    &--select__iconCalendar{
+      position: relative;
+      &:after {
+        content: "";
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        background: url(../../image/icon/blue_calendar.svg) no-repeat center;
+        background-size: contain;
+      }
+    }
+    &--select__iconTime{
+      position: relative;
+      &:after {
+        content: "";
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        background: url(../../image/icon/blue_time.svg) no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+  // 項目名
+  .p_form_title{
+    margin-bottom:4px;
+  }
+}

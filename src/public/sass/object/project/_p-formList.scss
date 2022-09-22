@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- フォームのリスト
+
+-------------------------------------------------- */
+.p-formList{
+	&__item {
+		& + & {
+// 			padding: 15px 0 0;
+			margin: 12px 0 0;
+// 			border-top: 1px dotted #DBDADB;
+		}
+		&--required {
+			position: relative;
+			&:before{
+		    @extend %c-text__lv6;
+		    text-align: center;
+		    display: inline-block;
+		    content: "*";
+		    color: color("text_blue");
+		    position: absolute;
+		    left: -5px;
+		    top: -8px;
+			}
+		}
+		&__head {
+			margin: 0 0 4px;
+			&__title {
+				font-size: 12px;
+				font-weight: 500;
+			}	
+		}
+		&__body {
+		}
+	}
+	
+}

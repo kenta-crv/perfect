@@ -1,0 +1,323 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+
+- ヘッダー
+- quizヘッダー
+-------------------------------------------------- */
+
+@media screen and (max-width: 830px){
+  .on_830.on_830 { display: block;}
+  .off_830.off_830 { display: none;}
+}
+.p-header {
+/*
+  max-width: 480px;
+  height: 56px;
+  width: 100%;
+  min-width: 360px;
+  background: #fff;
+  padding: 0 8px 0 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: 5;
+*/
+  max-width: 480px;
+  height: 50px;
+  width: 100%;
+  min-width: 360px;
+  background: #fff;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+//   left: 0;
+  z-index: 5;
+  &__logo {
+    flex: none;
+    a {
+      display: block;
+      .img {
+	      background: url(../image/logo/logo.svg) no-repeat center center !important;
+				background-size: cover !important;
+        height: 30px;
+				width: 130px
+      }
+    }
+  }
+  &__nav {
+	width: 480px;
+	width: 100%;
+    flex: auto;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-end;
+    display: none;
+    position: fixed;
+    // width: 100%;
+    height: 100%;
+		background: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &__item{
+	    height: 100%;
+// 	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: column;
+	    &__logo{
+	    	display: block;		  	
+	    	.img{
+		    	background: url(../image/logo/logo.svg) no-repeat center center !important;
+					background-size: cover !important;
+	        height: 36px;
+					width: 100px;
+	    	}
+		  }
+	    &__list{
+		    display: flex;
+				flex-flow: column;
+		    >li{
+            border-bottom: 1px solid #eaeaea;
+			    a{
+				    color: color("text_black");
+				    text-align: center;
+				    display: flex;
+				    align-items: center;
+				    padding: 12px 0;
+				    @extend %c-text__weight--500;
+				    &:hover{
+					    opacity: 0.7;
+				    }
+				    &:before{
+					    display: block;
+					    width: 28px;
+					    height: 28px;
+					    margin: 0 10px 0 0;
+				    }
+			    }
+				}
+				.login{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_login.svg);
+						}
+					}
+				}
+				.home{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_home.svg);
+						}
+					}
+				}
+				.news{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_news.svg);
+						}
+					}
+				}
+				.profile{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_profile.svg);
+						}
+					}
+				}
+				.about{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_about.svg);
+						}
+					}
+				}
+				.help{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_about.svg);
+						}
+					}
+				}
+				.term{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_term.svg);
+						}
+					}
+				}
+				.privacy{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_privacy.svg);
+						}
+					}
+				}
+				.mail{
+					a{
+						&:before{
+							content: "";
+					    background: url(../image/icon/ico_mail.svg);
+						}
+					}
+				}
+    	}
+   	}
+   	&__user{
+	 		margin: 50px 0 0;
+	 		&__head{
+		   	display: flex;
+		   	align-items: center;
+		   	padding: 10px;
+		   	background: color("background_blue");
+			 	.image{
+					margin: 0 15px 0 0;
+					background-size: cover;
+					background-repeat: no-repeat;
+					height: 55px;
+					width: 55px;
+					border: 0px solid #fff;
+					border-radius: 7px;
+          img{
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 55px;
+            width: 55px;
+            border: 2px solid #fff;
+            border-radius: 32px;
+          }
+		   	}
+		   	.text{
+			  	.name{
+				   	@extend %c-text__lv4;
+						@extend %c-text__weight--700;
+				    color: color("text_white");
+			   	}
+		   	}
+	   	}
+	   	&__body{
+		   	.text{
+			   	background: color("background_thinBlue");
+			   	padding: 5px 20px;
+			   	.menu{
+				   	color: color("text_white");
+				   	@extend %c-text__lv6;
+						@extend %c-text__weight--700;
+			   	}
+		   	}
+	   	}
+	   	&--foot{
+		  	margin: 8px 0 0;
+	   	}
+   	} 	
+  }
+}
+
+
+
+
+
+/* スマホメニュー */
+.p-sp_menu{
+	border-radius: 4px;
+	background: #1D4E90;
+	width: 36px;
+  height: 33px;
+	position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 10;
+  cursor: pointer;
+  .btn-trigger {
+	  position: relative;
+	  span{
+		  display: block;
+		  width: 100%;
+		  height: 3px;
+		  background: #fff;
+		  margin: 3px;
+	  }
+  }
+}
+
+.btn-trigger, .btn-trigger span {
+  display: inline-block;
+  transition: all .5s;
+  box-sizing: border-box;
+	width: 30px;
+  height: 9px;
+
+}
+.btn-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.btn-trigger span:nth-of-type(2) {
+  top: 10px;
+}
+.btn-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.btn-trigger span:nth-of-type(1).active {
+  transform: translateY(5px) rotate(45deg);
+}
+.btn-trigger span:nth-of-type(2).active {
+  opacity: 0;
+}
+.btn-trigger span:nth-of-type(3).active {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ! --------------------------------------------------
+- quizヘッダー
+-------------------------------------------------- */
+.p-quiz-header {
+  max-width: 480px;
+  height: 50px;
+  width: 100%;
+  background: #fff;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  &__logo {
+    flex: none;
+    a {
+      display: block;
+      .img {
+	      background: url(../image/logo/logo.svg) no-repeat center center !important;
+				background-size: cover !important;
+        height: 30px;
+				width: 130px;
+      }
+    }
+  }
+  &__buttonArea{
+	  display: flex;
+	  margin: 0 0 0 auto;
+	  a
+	  + a{
+		  margin: 0 0 0 5px;
+	  }
+  }
+}
+
+
+
+
+
+

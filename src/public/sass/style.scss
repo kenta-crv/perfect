@@ -1,0 +1,69 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/* ! --------------------------------------------------
+Foundation [サイト全体のデフォルトスタイル]
+-------------------------------------------------- */
+/* ! Variable [変数を管理] ------------------------- */
+@import "foundation/variable/_v-mediaQuery";
+@import "foundation/variable/_v-color";
+@import "foundation/_f-reset";
+@import "foundation/_f-base";
+/* ! --------------------------------------------------
+Layout [各ページを構成するサイト全体で共通したエリア]
+-------------------------------------------------- */
+@import "layout/_l-body";
+@import "layout/_l-base";
+@import "layout/_l-header";
+@import "layout/_l-main";
+@import "layout/_l-container";
+@import "layout/_l-home";
+@import "layout/_l-page";
+@import "layout/_l-underPage";
+@import "layout/_l-12";
+/* ! --------------------------------------------------
+Object [サイト全体で再利用できるパターンを持つモジュール]
+-------------------------------------------------- */
+/* ! Component [小さな単位のモジュールを管理] ------------------------- */
+@import "object/component/_c-button";
+@import "object/component/_c-text";
+@import "object/component/_c-input";
+/* ! Project [Componentと、他の要素によって構成される大きな単位のモジュール] ------------------------- */
+@import "object/project/_p-header";//ヘッター
+@import "object/project/_p-footer";//フッター
+@import "object/project/_p-login";//ログイン
+@import "object/project/_p-confirm";//登録確認
+@import "object/project/_p-home";//ホーム
+@import "object/project/_p-show";//クイズ詳細
+@import "object/project/_p-quiz";//クイズ
+@import "object/project/_p-problem";//問題
+@import "object/project/_p-question";//クエスチョン
+@import "object/project/_p-movie";//動画
+@import "object/project/_p-choice";//回答
+@import "object/project/_p-answer";//答え
+@import "object/project/_p-commentary";//解説
+@import "object/project/_p-bread"; //ぱんクズ
+@import "object/project/_p-pagination"; //ページんぐ
+@import "object/project/_p-attraction"; //アトラクション
+@import "object/project/_p-formList"; //フォームのリスト
+@import "object/project/_p-formError";//フォームのエラー
+@import "object/project/_p-modal"; //モーダル
+
+
+@import "object/library/_remodal-default-theme.scss"; //モーダル
+@import "object/library/_remodal.scss"; //モーダル
+
+/* ! ==================================================
+
+- ファイル名、クラス名なるべくは省略しない
+　button title text image
+
+- ファイル名、複数形使用しない
+　×images ×assets
+
+- 2単語以上のワードを使用する場合はキャメル式を使用する
+　videoCreator frequentlyQuestion
+
+================================================== */
+
+

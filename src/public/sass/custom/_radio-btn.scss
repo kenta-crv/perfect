@@ -1,0 +1,65 @@
+.c-radio-cnt {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+    }
+}
+
+  /* Hide the browser's default radio button */
+
+
+  /* Create a custom radio button */
+
+
+  /* On mouse-over, add a grey background color */
+.c-radio-cnt:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.c-radio-cnt input:checked ~ .checkmark {
+    background-color: #fff;
+}
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+  /* Show the indicator (dot/circle) when checked */
+.c-radio-cnt input:checked ~ .checkmark:after {
+    display: block;
+}
+
+  /* Style the indicator (dot/circle) */
+.c-radio-cnt .checkmark:after {
+    top: 4px;
+    left: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FF6161;
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.c-vanish{
+    &__1{display:none;
+    }
+    &__2{display:none;
+    }
+    &__3{display:none;
+    }
+}
+.c-vanish__1,.c-vanish__2,.c-vanish__3{
+    &.off{
+        display:flex;
+    }
+}
